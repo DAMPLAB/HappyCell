@@ -6,6 +6,13 @@
         <h1>
           Welcome to HappyCell!
         </h1>
+        <v-btn
+            elevation="2"
+            v-on:click="click_button"
+        >Click to be awesome.</v-btn>
+        <div id="thinger">
+          {{ restriction_site }}
+        </div>
       </div>
 
     </v-main>
@@ -14,13 +21,22 @@
 
 <script>
 
+import axios from "axios";
+
 export default {
   name: 'App',
 
   components: {},
-
+  methods: {
+    click_button() {
+      console.log('This is the Frontend.')
+      axios
+          .get('http://localhost:8000/find_restriction_site/pCI_neo_sequence.fasta/XhoI.txt')
+          .then(response => (this.restriction_site = response.data.restriction_sites[0]))
+    },
+  },
   data: () => ({
-    //
+    restriction_site: 0
   }),
 };
 </script>
