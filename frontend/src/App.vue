@@ -2,7 +2,7 @@
   <v-app>
     <v-main>
       <div align="center">
-        <img src="./assets/HappyCell.png">
+        <img src="./assets/HappyCell.png" width="10%">
         <h1>
           Welcome to HappyCell!
         </h1>
@@ -12,12 +12,22 @@
         >Click to be awesome.</v-btn>
         <div id="thinger">
           {{ restriction_site }}
+          <div class="text-center">
+    <v-btn
+      rounded
+      color="primary"
+      dark
+    >
+      Find the restriction site
+    </v-btn>
+          </div>
+
         </div>
       </div>
-
     </v-main>
   </v-app>
 </template>
+
 
 <script>
 
@@ -25,7 +35,6 @@ import axios from "axios";
 
 export default {
   name: 'App',
-
   components: {},
   methods: {
     click_button() {
@@ -40,3 +49,6 @@ export default {
   }),
 };
 </script>
+
+
+
