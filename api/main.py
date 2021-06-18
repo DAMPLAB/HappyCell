@@ -50,3 +50,12 @@ async def find_restriction_sites(fasta_site_file: str, restriction_site_file: st
     return {
         "restriction_sites": res,
     }
+
+
+@app.post("/echopost/{ret_string}")
+async def echopost(ret_string: str):
+    return {
+        "postmessage": f"{ret_string}",
+    }
+# how to check whether backend received?
+

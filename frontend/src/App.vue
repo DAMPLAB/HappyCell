@@ -2,27 +2,27 @@
   <v-app>
     <v-main>
       <div align="center">
-        <img src="./assets/HappyCell.png" width="10%">
+        <img src="./assets/HappyCell.png" width="20%">
         <h1>
           Welcome to HappyCell!
         </h1>
-        <v-btn
+       <v-btn
             elevation="2"
             v-on:click="click_button"
-        >Click to be awesome.</v-btn>
+        >find restriction site.</v-btn>
         <div id="thinger">
           {{ restriction_site }}
           <div class="text-center">
-    <v-btn
-      rounded
-      color="primary"
-      dark
-    >
-      Find the restriction site
-    </v-btn>
           </div>
 
         </div>
+      <v-btn
+            elevation="2"
+            rounded
+            color="primary"
+            dark
+            v-on:click="click_button2"
+        >Upload the fasta file </v-btn>
       </div>
     </v-main>
   </v-app>
@@ -30,9 +30,7 @@
 
 
 <script>
-
 import axios from "axios";
-
 export default {
   name: 'App',
   components: {},
@@ -43,12 +41,32 @@ export default {
           .get('http://localhost:8000/find_restriction_site/pCI_neo_sequence.fasta/XhoI.txt')
           .then(response => (this.restriction_site = response.data.restriction_sites[0]))
     },
+
+    click_button2(){
+      console.log('This is the Frontend2.')
+          //axios({
+          //  method: 'post',
+          //  url: "http://localhost:8000/echo/h",
+          //  data: 'doge',
+          //  headers: {'content-type': 'application/x-www-form-urlencoded'}
+          //})
+          axios.post("http://localhost:8000/echopost/hi")
+              .then(function (response) {
+              console.log(response);
+            })
+            .catch(function (error) {
+              console.log(error);
+               });
+
+          }
+
+
+
   },
   data: () => ({
     restriction_site: 0
   }),
 };
 </script>
-
 
 
