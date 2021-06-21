@@ -47,9 +47,10 @@ export default {
           //axios({
           //  method: 'post',
           //  url: "http://localhost:8000/echo/h",
-          //  data: 'doge',
+          //  data: 'test',
           //  headers: {'content-type': 'application/x-www-form-urlencoded'}
           //})
+
           axios.post("http://localhost:8000/echopost/hi")
               .then(function (response) {
               console.log(response);
@@ -58,15 +59,36 @@ export default {
               console.log(error);
                });
 
-          }
+      axios({
+            method: 'post',
+            url: "http://localhost:8000/postStringTest/",
+            data:{"name":"test string to the backend"},
+
+        /*
+        transformRequest:function(obj) {
+              var str = [];
+              for ( var p in obj) {
+                str.push(encodeURIComponent(p) + "="
+                    + encodeURIComponent(obj[p]));
+              }
+              return str.join("&");
+            }
+
+         */
 
 
+          })
+      .then(function (response) {
+              console.log(response);
+            })
 
+    }
   },
   data: () => ({
     restriction_site: 0
   }),
 };
+
 </script>
 
 

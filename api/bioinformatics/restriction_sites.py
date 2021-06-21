@@ -56,13 +56,13 @@ def get_restriction_sites(
     """
 
     Args:
-        genome_fp:
-        restriction_fp:
+        genome_fp: path of the mRNA file??
+        restriction_fp: path of the restriction sites files
 
-    Returns:
+    Returns: Load data, search, and return index of each restriction site as dictionary
 
     """
-    # Load data, search, and return indices of each restriction site as dictionary
+
     if not os.path.isfile(genome_fp) or not os.path.isfile(restriction_fp):
         raise TypeError("file does not exist")
     a = load_file(genome_fp)

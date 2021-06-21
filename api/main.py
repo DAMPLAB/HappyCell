@@ -7,9 +7,11 @@ Written by [AUTHOR NAME] [<AUTHOR EMAIL HERE>], [DATE HERE]
 --------------------------------------------------------------------------------
 """
 import os
-from fastapi import FastAPI
+from fastapi import FastAPI, File, UploadFile, Header
 from bioinformatics.restriction_sites import get_restriction_sites
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
+from typing import Optional
 
 origins = [
     "http://localhost.tiangolo.com",
@@ -57,5 +59,14 @@ async def echopost(ret_string: str):
     return {
         "postmessage": f"{ret_string}",
     }
-# how to check whether backend received?
+# how to check whether backend received from backend page?
+# where Ok statuText "Ok" come from?
+
+class StringTest(BaseModel):
+    name: str
+
+@app.post("/postStringTest/")
+async def create_string(strings: StringTest):
+    return strings
+
 
