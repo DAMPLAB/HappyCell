@@ -32,6 +32,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 # --------------------------- STATEFUL OBJECTS -----------------------------
 
 # ------------------------------ GENERIC UTILITY -------------------------------
@@ -41,32 +42,52 @@ async def echo(ret_string: str):
         "message": f"{ret_string}",
     }
 
-
-@app.get("/find_restriction_site/{fasta_site_file}/{restriction_site_file}")
-async def find_restriction_sites(fasta_site_file: str, restriction_site_file: str):
-    file_root = os.path.join(os.getcwd(), 'files')
-    res = get_restriction_sites(
-        genome_fp=os.path.join(file_root, fasta_site_file),
-        restriction_fp=os.path.join(file_root, restriction_site_file),
-    )
-    return {
-        "restriction_sites": res,
-    }
-
+'''
+@app.get("/findsites/{fastafile}/")
+async def findsites(fastafile: str):
+    file_root = os.path.join(os.getcwd(), fastafile)
+    print(file_root)
+    sequence = load_file(file_root)
+    print(file_root)
+    res = get_restriction_sites(genome_str=sequence)
+    return res
+'''
 
 @app.post("/echopost/{ret_string}")
 async def echopost(ret_string: str):
     return {
         "postmessage": f"{ret_string}",
     }
+
+
 # how to check whether backend received from backend page?
-# where Ok statuText "Ok" come from?
+# where Ok statusText "Ok" come from?
 
 class StringTest(BaseModel):
     name: str
+
 
 @app.post("/postStringTest/")
 async def create_string(strings: StringTest):
     return strings
 
 
+# post a file from frontend to backend?? file not working
+@app.post("/files/")
+async def create_file(file: bytes = File(...)):
+    # TODO: Get rid of Fasta File Header. ">" <- This thing:
+
+    input_text = file.decode('UTF-8')
+    # Example text: > I am a thing. \n
+    # My genetic code starts right here. GCAT
+    # Regular Expression Capture Groups, which are finite state machine allow for
+    # the specific parsing of text.
+    input_text = input_text.split("\n")[1:]
+    input_text = "".join(input_text)
+    removal_list = [", ", "'", "[", "]"]
+    for entry in removal_list:
+        input_text = input_text.replace(entry, '')
+    res = get_restriction_sites(
+        genome_str=input_text,
+    )
+    return res

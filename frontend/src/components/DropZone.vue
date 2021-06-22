@@ -26,6 +26,7 @@
   </v-container>
 </template>
 <script>
+
 import vue2Dropzone from 'vue2-dropzone'
 import 'vue2-dropzone/dist/vue2Dropzone.min.css'
 export default {
@@ -36,18 +37,14 @@ export default {
   methods: {
     droppedSbol(input_file) {
       console.log(input_file)
-      console.log('Hello')
-      let gating_condition = true
+      console.log('Hello!'+ "File Dropped :)")
       // Validation from backend goes here.
-      if (gating_condition){
-        this.$router.replace('scoring')
-      }
     }
   },
   data: function () {
     return {
       dropzoneOptions: {
-        url: 'https://httpbin.org/post',
+        url: 'http://localhost:8000/files/',
         thumbnailWidth: 150,
         maxFilesize: 0.5,
         headers: {"My-Awesome-Header": "header value"},

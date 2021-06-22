@@ -15,12 +15,11 @@ from typing import (
 
 def find_site(sequence: str, re_site: str) -> List[int]:
     """
-
     Args:
-        sequence:
-        re_site:
+        sequence: str of sequence
+        re_site: restriction site
 
-    Returns:
+    Returns: return the index of the restriction site
 
     """
     sites_index = []
@@ -33,20 +32,6 @@ def find_site(sequence: str, re_site: str) -> List[int]:
         return sites_index
 
 
-def load_file(filepath: str) -> str:
-    """
-        return a str of genome
-
-    Args:
-        filepath:
-
-    Returns:
-
-    """
-    if not os.path.isfile(filepath):
-        raise TypeError(f'{filepath} does not exist.')
-    genome = open(filepath).read().replace("\n", "")
-    return genome
 
 
 def get_restriction_sites(
@@ -56,7 +41,7 @@ def get_restriction_sites(
     """
 
     Args:
-        genome_fp: path of the mRNA file??
+        genome_fp: path of the mRNA file?? No its already string???
         restriction_fp: path of the restriction sites files
 
     Returns: Load data, search, and return index of each restriction site as dictionary
@@ -70,10 +55,10 @@ def get_restriction_sites(
     return find_site(a, b)
 
 
-# if __name__ == '__main__':
-#     current_location = os.path.abspath(__file__)
-#     fasta_seq = os.path.join(Path(current_location).parent.parent.absolute(), 'files', 'pCI_neo_sequence.fasta')
-#     res_site = os.path.join(Path(current_location).parent.parent.absolute(), 'files', 'XhoI.txt')
-#     # a = "files/pCI_neo_sequence.fasta"
-#     # b = "files/XhoI.txt"
-#     print(get_restriction_sites(fasta_seq, res_site))
+if __name__ == '__main__':
+     current_location = os.path.abspath(__file__)
+     #fasta_seq = os.path.join(Path(current_location).parent.parent.absolute(), 'files', 'pCI_neo_sequence.fasta')
+     #res_site = os.path.join(Path(current_location).parent.parent.absolute(), 'files', 'XhoI.txt')
+     a = " <>sds \n weeqeeqweeCTCGAG \nsdsdsdsd "
+     b = "ee"
+     print(find_site(a,b))
