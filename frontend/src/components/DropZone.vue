@@ -48,7 +48,7 @@ export default {
         thumbnailWidth: 150,
         maxFilesize: 0.5,
         headers: {"My-Awesome-Header": "header value"},
-        dictDefaultMessage: "<i class='fa fa-cloud-upload'></i>Input SBOL File"
+        dictDefaultMessage: "<i class='fa fa-cloud-upload'></i>Input Fasta File"
       }
     }
   }
