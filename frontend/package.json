@@ -8,6 +8,9 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@yapv/canvas": "^0.2.2",
+    "@yapv/core": "^0.2.2",
+    "@yapv/svg": "^0.2.2",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
     "vuetify": "^2.4.0"

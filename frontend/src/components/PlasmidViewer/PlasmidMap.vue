@@ -1,21 +1,11 @@
-<template>
-<PlasmidMap v-bind:displayConfig="{
-								width: 500,
-								height: 500,
-								viewBox: {
-									width: 400,
-									height: 400,
-								},
-							}">
-  </PlasmidMap>
-</template>
-
 <script>
+import SVG from "@yapv/svg";
+
 export default {
-  name: "PlasmidMap"
-}
+  functional: true,
+  render(h, context) {
+    const PlasmidMap = SVG.circular.PlasmidMapComponent(h);
+    return PlasmidMap(context.props, context.children);
+  }
+};
 </script>
-
-<style scoped>
-
-</style>
