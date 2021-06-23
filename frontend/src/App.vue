@@ -7,18 +7,7 @@
           Welcome to HappyCell!
         </h4>
         <br/>
-        <v-btn
-            elevation="2"
-            v-on:click="click_button1"
 
-        >find restriction site
-        </v-btn>
-
-        <div id="thinger">
-          {{ restriction_site }}
-          <div class="text-center">
-          </div>
-        </div>
         <br/> <br/>
         <v-btn
             elevation="2"
@@ -57,7 +46,9 @@ export default {
   name: 'App',
   components: {DropZone, AdFooter},
 
+
   methods: {
+    /*
     click_button1() {
       // button1 to return a restriction sites index
       console.log('This is the Frontend.')
@@ -66,6 +57,8 @@ export default {
           .then(response =>
               (this.restriction_site = response.data.restriction_sites[0]))
     },
+
+   */
 
     click_button2() {
       // buttons is for testing axios.post,
@@ -91,7 +84,6 @@ export default {
             console.log(response);
           })
     },
-
   },
 
   // ???? why this data:() is here? so far from button1???

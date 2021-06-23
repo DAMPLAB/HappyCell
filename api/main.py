@@ -17,8 +17,7 @@ origins = [
     "http://localhost.tiangolo.com",
     "https://localhost.tiangolo.com",
     "http://localhost",
-    "http://localhost:8080",
-]
+    "http://localhost:8080"]
 
 # --------------------------- CONSTANT DECLARATION -----------------------------
 app = FastAPI()
@@ -62,7 +61,8 @@ async def create_string(strings: StringTest):
 
 
 # post a file from frontend to backend?? file not working
-@app.post("http://localhost:8000/files/")
+#@app.post("http://localhost:8000/files/")
+@app.post("/files/")
 async def create_file(file: bytes = File(...)):
     input_text = file.decode('UTF-8')
     # Example text: > I am a thing. \n
@@ -74,10 +74,8 @@ async def create_file(file: bytes = File(...)):
     removal_list = [", ", "'", "[", "]"]
     for entry in removal_list:
         input_text = input_text.replace(entry, '')
-    res = find_site(
-        genome_str=input_text,
-    )
-    print("filetest")
+    res = find_site(input_text)
+    print(res)
     return res
 
 

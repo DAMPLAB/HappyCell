@@ -35,8 +35,6 @@ def find_site(sequence: str) -> List[int]:
             if sequence[i: (i + len(restriction_site_map[re_site]))] \
                     == restriction_site_map[re_site]:
                 sites_index.append(i)
-        print(f'{repr(sequence)=}')
-        print(f'{repr(restriction_site_map[re_site])=}')
     return sites_index
 
 

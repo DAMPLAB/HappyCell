@@ -38,7 +38,6 @@ export default {
     droppedSbol(input_file) {
       console.log(input_file)
       console.log('Hello!'+ "File Dropped :)")
-      // Validation from backend goes here.
     }
   },
   data: function () {
