@@ -13,6 +13,7 @@
     "@yapv/svg": "^0.2.2",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
+    "vue2-dropzone": "^3.6.0",
     "vuetify": "^2.4.0"
   },
   "devDependencies": {
