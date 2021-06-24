@@ -7,20 +7,18 @@
           Welcome to HappyCell!
         </h4>
         <br/>
-
         <br/> <br/>
         <v-btn
             elevation="2"
             rounded
             color="primary"
             dark
-            v-on:click="click_button2"
+            v-on:click="click_button"
         >pass two strings to backend
         </v-btn>
         <br/> <br/>
       </div>
       <br/>
-
       <Drop-Zone/>
       <AdFooter/>
     </v-main>
@@ -29,12 +27,6 @@
 
 
 <script>
-
-// question: run in pycharm failed??? both App.vue and main.py?
-
-// so many buttons: visually messy, is that better to write them in components?
-
-// big picture of the projects/ 40hr/pace / short Zooms
 
 import axios from "axios";
 
@@ -48,19 +40,8 @@ export default {
 
 
   methods: {
-    /*
-    click_button1() {
-      // button1 to return a restriction sites index
-      console.log('This is the Frontend.')
-      axios
-          .get('http://localhost:8000/findsites/pCINeoSequence.fasta')
-          .then(response =>
-              (this.restriction_site = response.data.restriction_sites[0]))
-    },
 
-   */
-
-    click_button2() {
+    click_button() {
       // buttons is for testing axios.post,
       // and pass string by two different ways: URL and parameter
       console.log('This is the Frontend2.')
@@ -74,7 +55,7 @@ export default {
           });
 
 
-      // pass short string using data???
+      // pass short string using para
       axios({
         method: 'post',
         url: "http://localhost:8000/postStringTest/",
@@ -85,8 +66,6 @@ export default {
           })
     },
   },
-
-  // ???? why this data:() is here? so far from button1???
   data: () => ({
     restriction_site: 0
   }),

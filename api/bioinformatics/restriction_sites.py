@@ -6,41 +6,29 @@ Written by [Beining Ouyang] [bouyang@bu.edu], [Jun.14.2021]
 [PROJECT LICENCSE HERE] N/A
 --------------------------------------------------------------------------------
 """
-import os
-from typing import (
-    List,
-)
 
 # create a dic for res. sites
-restriction_site_map = {
+res_site_map = {
     "NotI": 'GCGGCCGC',
     "XhoI": 'CTCGAG',
 }
 
 
-
-def find_site(sequence: str) -> List[int]:
+def find_site(sequence: str) -> dict[str, int]:
     """
     Args:
         sequence: str of sequence
-        re_site: restriction site
-
-    Returns: return the index of the restriction site
-
+    Returns: return a dict: key: str, name of the res. sites., value:
+    index of the restriction sites
     """
-    sites_index = []
+    sites_index_map = {}
+    for re_site in res_site_map:
+        for i in range(len(sequence) - len(res_site_map[re_site]) + 1):
+            if sequence[i: (i + len(res_site_map[re_site]))] == res_site_map[re_site]:
+                sites_index_map[re_site] = i
+    return sites_index_map
 
-    for re_site in restriction_site_map:
-        for i in range(len(sequence) - len(restriction_site_map[re_site]) + 1):
-            if sequence[i: (i + len(restriction_site_map[re_site]))] \
-                    == restriction_site_map[re_site]:
-                sites_index.append(i)
-    return sites_index
-
-
-if __name__ == '__main__':
-     current_location = os.path.abspath(__file__)
-     #fasta_seq = os.path.join(Path(current_location).parent.parent.absolute(), 'files', 'pCI_neo_sequence.fasta')
-     #res_site = os.path.join(Path(current_location).parent.parent.absolute(), 'files', 'XhoI.txt')
-     a = "CTCGAGsdsaaaaweeqeeqweeCTCGAGsdaasdsdsd "
-     print(find_site(a))
+#  modular testing
+#  if __name__ == '__main__':
+#     a = "CTCGAGsdsaaaaweeqeeqweeCTCGAGsdaasdsdsd "
+#     print(find_site(a))
