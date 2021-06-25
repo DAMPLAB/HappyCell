@@ -20,7 +20,9 @@
       </div>
       <br/>
       <Drop-Zone/>
+      <div align="center">
       <PlasmidViewer/>
+        </div>
       <AdFooter/>
     </v-main>
   </v-app>
