@@ -20,6 +20,7 @@
       </div>
       <br/>
       <Drop-Zone/>
+      <PlasmidViewer/>
       <AdFooter/>
     </v-main>
   </v-app>
@@ -33,10 +34,11 @@ import axios from "axios";
 import DropZone from './components/DropZone.vue'
 import AdFooter from './components/AdFooter.vue'
 import 'vue2-dropzone/dist/vue2Dropzone.min.css'
+import PlasmidViewer from "./components/PlasmidViewer/PlasmidViewer";
 
 export default {
   name: 'App',
-  components: {DropZone, AdFooter},
+  components: {PlasmidViewer, DropZone, AdFooter},
 
 
   methods: {
