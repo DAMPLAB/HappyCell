@@ -71,6 +71,15 @@ async def create_file(file: bytes = File(...)):
     removal_list = [", ", "'", "[", "]"]
     for entry in removal_list:
         input_text = input_text.replace(entry, '')
+    global res
     res = find_site(sequence=input_text)
-    print(res)
     return res
+
+
+
+# post a file from frontend to backend ???
+# question: is this the right way to return dropzone data to frond end
+@app.get("/files_return/")
+async def return_sites():
+    print(res)
+    return {"return": f"{res}"}

@@ -20,9 +20,22 @@
       </div>
       <br/>
       <Drop-Zone/>
+      <br/> <br/>
+
       <div align="center">
-      <PlasmidViewer/>
-        </div>
+  <v-btn 
+    elevation="2"
+    color="primary"
+    v-on:click="click_button2"
+  >click me to see plasmid viewer :)
+  </v-btn>
+    </div>
+
+
+
+      <div align="center">
+        <PlasmidViewer/>
+      </div>
       <AdFooter/>
     </v-main>
   </v-app>
@@ -69,10 +82,16 @@ export default {
             console.log(response);
           })
     },
+
+     click_button2() {
+      // buttons is to get restriction sites info,
+      console.log('get restriction sites')
+      axios.get('http://localhost:8000/files_return/')
+          .then(function (response) {
+            console.log(response);
+          })
+    },
   },
-  data: () => ({
-    restriction_site: 0
-  }),
 };
 
 </script>
