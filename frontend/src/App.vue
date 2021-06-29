@@ -7,35 +7,34 @@
           Welcome to HappyCell!
         </h4>
         <br/>
-        <br/> <br/>
-        <v-btn
-            elevation="2"
-            rounded
-            color="primary"
-            dark
-            v-on:click="click_button"
-        >pass two strings to backend
-        </v-btn>
-        <br/> <br/>
       </div>
-      <br/>
-      <Drop-Zone/>
-      <br/> <br/>
+        <RestrictionSiteViewer/>
+<!--        <br/> <br/>-->
+<!--        <v-btn-->
+<!--            elevation="2"-->
+<!--            rounded-->
+<!--            color="primary"-->
+<!--            dark-->
+<!--            v-on:click="click_button"-->
+<!--        >pass two strings to backend-->
+<!--        </v-btn>-->
+<!--        <br/> <br/>-->
+<!--      </div>-->
+<!--      <br/>-->
+<!--      <DropZone/>-->
+<!--      <br/> <br/>-->
 
-      <div align="center">
-  <v-btn 
-    elevation="2"
-    color="primary"
-    v-on:click="click_button2"
-  >click me to see plasmid viewer :)
-  </v-btn>
-    </div>
-
-
-
-      <div align="center">
-        <PlasmidViewer/>
-      </div>
+<!--      <div align="center">-->
+<!--  <v-btn -->
+<!--    elevation="2"-->
+<!--    color="primary"-->
+<!--    v-on:click="click_button2"-->
+<!--  >click me to see plasmid viewer :)-->
+<!--  </v-btn>-->
+<!--    </div>-->
+<!--      <div align="center">-->
+<!--        <PlasmidViewer/>-->
+<!--      </div>-->
       <AdFooter/>
     </v-main>
   </v-app>
@@ -45,15 +44,13 @@
 <script>
 
 import axios from "axios";
-
-import DropZone from './components/DropZone.vue'
 import AdFooter from './components/AdFooter.vue'
 import 'vue2-dropzone/dist/vue2Dropzone.min.css'
-import PlasmidViewer from "./components/PlasmidViewer/PlasmidViewer";
+import RestrictionSiteViewer from "@/components/Viewer/RestrictionSiteViewer";
 
 export default {
   name: 'App',
-  components: {PlasmidViewer, DropZone, AdFooter},
+  components: {RestrictionSiteViewer, AdFooter},
 
 
   methods: {
@@ -86,6 +83,13 @@ export default {
      click_button2() {
       // buttons is to get restriction sites info,
       console.log('get restriction sites')
+      axios.get('http://localhost:8000/files_return/')
+          .then(function (response) {
+            console.log(response);
+          })
+    },
+    plasmid_file_handler() {
+      // buttons is to get restriction sites info,
       axios.get('http://localhost:8000/files_return/')
           .then(function (response) {
             console.log(response);

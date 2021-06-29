@@ -6,6 +6,10 @@ Written by [Beining Ouyang] [bouyang@bu.edu], [Jun.14.2021]
 [PROJECT LICENCSE HERE] N/A
 --------------------------------------------------------------------------------
 """
+from typing import (
+    ByteString,
+    Dict,
+)
 
 # create a dic for res. sites
 res_site_map = {
@@ -13,8 +17,26 @@ res_site_map = {
     "XhoI": 'CTCGAG',
 }
 
+def format_fasta_file(sequence_file):
+    """
 
-def find_site(sequence: str) -> dict[str, int]:
+    Args:
+        sequence_file:
+
+    Returns:
+
+    """
+    input_text = sequence_file.decode('UTF-8')
+    # input_text was in byte, we decode it here
+    genomic_code = input_text.split("\n")[1:]
+    sequence_name = input_text.split("\n")[0].replace(">", "").split(',')[0]
+    genomic_code = "".join(genomic_code)
+    removal_list = [", ", "'", "[", "]"]
+    for entry in removal_list:
+        genomic_code = genomic_code.replace(entry, '')
+    return sequence_name, input_text
+
+def find_site(sequence: str) -> Dict[str, int]:
     """
     Args:
         sequence: str of sequence
@@ -28,7 +50,14 @@ def find_site(sequence: str) -> dict[str, int]:
                 sites_index_map[re_site] = i
     return sites_index_map
 
-#  modular testing
-#  if __name__ == '__main__':
-#     a = "CTCGAGsdsaaaaweeqeeqweeCTCGAGsdaasdsdsd "
-#     print(find_site(a))
+
+def calculate_length_of_plasmid(sequence: str) -> int:
+    """
+
+    Args:
+        sequence:
+
+    Returns:
+
+    """
+    return len(sequence)

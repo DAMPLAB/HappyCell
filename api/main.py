@@ -8,10 +8,13 @@ Written by [Beining Ouyang] [bouyang@bu.edu], [Jun.24.2021]
 """
 
 from fastapi import FastAPI, File
-from bioinformatics.restriction_sites import find_site
+from bioinformatics.restriction_sites import (
+    find_site,
+    format_fasta_file,
+    calculate_length_of_plasmid,
+)
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-
 
 origins = [
     "http://localhost.tiangolo.com",
@@ -75,6 +78,18 @@ async def create_file(file: bytes = File(...)):
     res = find_site(sequence=input_text)
     return res
 
+
+@app.post("/display_plasmid/")
+async def create_plasmid_struct(file: bytes = File(...)):
+    name, sequence = format_fasta_file(file)
+    sequence_length = calculate_length_of_plasmid(sequence)
+    sites = find_site(sequence)
+    return {
+        "sequence_name": name,
+        "sequence_length": sequence_length,
+        "restriction_sites": sites,
+        "basepair_name": f'{sequence_length} bp'
+    }
 
 
 # post a file from frontend to backend ???

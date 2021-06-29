@@ -72,7 +72,7 @@ import Label from './PlasmidLabel.vue';
 
 const layout = YAPV.layout.circular({ length: 547});
 const plasmid_name = 'plasmid name'
-const size_bp = '0 bp'
+const size_bp = '5200 bp'
 
 export default {
   name: 'PlasmidViewer',
