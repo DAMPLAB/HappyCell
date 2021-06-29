@@ -14,7 +14,7 @@
 						style: 'stroke: gray; fill: gray;',
 					}">
 			<Axis v-bind:layout="layout"
-						v-bind:location="{start: 1, end: 5472}"
+						v-bind:location="{start: 1, end: 5473}"
 						v-bind:displayConfig="{
 							distance: 100,
 							style: 'stroke: transparent; fill: transparent;',
@@ -70,7 +70,7 @@ import Axis from './PlasmidAxis.vue';
 import Label from './PlasmidLabel.vue';
 //import axios from "axios";
 
-const layout = YAPV.layout.circular({ length: 5472 });
+const layout = YAPV.layout.circular({ length: 547});
 const plasmid_name = 'plasmid name'
 const size_bp = '0 bp'
 
