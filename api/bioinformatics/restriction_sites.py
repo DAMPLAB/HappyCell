@@ -6,17 +6,17 @@ Written by [Beining Ouyang] [bouyang@bu.edu], [Jun.14.2021]
 [PROJECT LICENCSE HERE] N/A
 --------------------------------------------------------------------------------
 """
-from res_site_dict import Alph_res_site_dict
+#  from res_site_dict import Alph_res_site_dict, pCI_res_site_dict
 from typing import (
     ByteString,
     Dict,
 )
 
 # create a dic for res. sites
-#res_site_map = {
-#   "NotI": 'GCGGCCGC',
-#   "XhoI": 'CTCGAG',
-#}
+res_site_map = {
+  "NotI": 'GCGGCCGC',
+  "XhoI": 'CTCGAG',
+}
 
 def format_fasta_file(sequence_file):
     """
@@ -45,9 +45,9 @@ def find_site(sequence: str) -> Dict[str, int]:
     index of the restriction sites
     """
     sites_index_map = {}
-    for re_site in Alph_res_site_dict:
-        for i in range(len(sequence) - len(Alph_res_site_dict[re_site]) + 1):
-            if sequence[i: (i + len(Alph_res_site_dict[re_site]))] == Alph_res_site_dict[re_site]:
+    for re_site in res_site_map:
+        for i in range(len(sequence) - len(res_site_map[re_site]) + 1):
+            if sequence[i: (i + len(res_site_map[re_site]))] == res_site_map[re_site]:
                 sites_index_map[re_site] = i
     return sites_index_map
 
