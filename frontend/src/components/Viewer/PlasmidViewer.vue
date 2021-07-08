@@ -70,7 +70,7 @@ import Axis from './PlasmidAxis.vue';
 import Label from './PlasmidLabel.vue';
 //import axios from "axios";
 
-const layout = YAPV.layout.circular({ length: 547});
+const layout = YAPV.layout.circular({ length: 5472});
 const plasmid_name = 'plasmid name'
 const size_bp = '5200 bp'
 

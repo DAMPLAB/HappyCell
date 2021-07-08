@@ -2,7 +2,7 @@
   <v-footer
       app
       color="secondary"
-      height="60"
+      height="120"
   >
     <v-row align-content="stretch" justify="space-between" align="center">
       <v-img

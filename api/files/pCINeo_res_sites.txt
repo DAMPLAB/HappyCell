@@ -1,0 +1,113 @@
+AatI agg|cct	2397
+AatII gacgt|c	279, 332, 415, 601, 3649
+Acc16I tgc|gca	1463, 2002, 2694, 4345
+AccII cg|cg	214, 1105, 1486, 1510, 1530, 1906, 1993, 2658, 2959, 2991, 3392, 3472, 3575, 3577, 3677, 4009, 4502, 4832, 5413
+AccIII t|ccgga	none
+AclI aa|cgtt	3966, 4339
+AcvI cac|gtg	none
+AfaI gt|ac	99, 373, 453, 486, 537, 702, 1064, 1111, 2050, 2898, 3411, 4087
+AfeI agc|gct	none
+AflII c|ttaag	829, 848, 1051, 2446
+AgeI a|ccggt	none
+AhlI a|ctagt	153
+Alw441 g|tgcac	3399, 3896, 5142
+AluI ag|ct	728, 759, 834, 1048, 1282, 1627, 1884, 2074, 2362, 2416, 2698, 3156, 3517, 3536, 4215, 4278, 4378, 4899, 5156, 5202, 5292
+Aor51HI agc|gct	none
+ApaI gggcc|c	none
+ApaLI g|tgcac	3399, 3896, 5142
+AscI gg|cgcgcc	none
+AseI at|taat	161, 4393
+Asp718I g|gtacc	1109, 2048
+AsuII tt|cgaa	3274
+AvaI c|ycgrg	1092, 1126
+AviII tgc|gca	1463, 2002, 2694, 4345
+AvrII c|ctagg	2398
+BalI tgg|cca	11, 65, 2674
+BamHI g|gatcc	3386
+BanIII at|cgat	1404, 3373
+BbeI ggcgc|c	2595
+BbrPI cac|gtg	none
+BbuI gcatg|c	2146, 2218, 2997
+BcuI a|ctagt	153
+BclI t|gatca	none
+BfaI c|tag	154, 753, 1058, 1087, 1116, 1210, 1561, 2399, 2453, 4375, 4710, 4963
+BfrI c|ttaag	829, 848, 1051, 2446
+BfrBI atg|cat	2146, 2218
+BglII a|gatct	5468
+BlnI c|ctagg	2398
+BseCI at|cgat	1404, 3373
+BsePI g|cgcgc	2989
+BseX3I c|ggccg	1132, 2498
+BshTI a|ccggt	none
+Bsp1407I t|gtaca	97
+Bsp19I c|catgg	514, 2009, 2305, 3024
+BspDI at|cgat	1404, 3373
+BspEI t|ccgga	none
+BsrGI t|gtaca	97
+BssHII g|cgcgc	2989
+BstUI cg|cg	214, 1105, 1486, 1510, 1530, 1906, 1993, 2658, 2959, 2991, 3392, 3472, 3575, 3577, 3677, 4009, 4502, 4832, 5413
+ClaI at|cgat	1404, 3373
+DpnII |gatc	662, 747, 1401, 1405, 1441, 1995, 2763, 2841, 2922, 2931, 3009, 3386, 3885, 3921, 3938, 4196, 4242, 4260, 4601, 4706, 4718, 4796, 4804, 4815, 4890, 5468
+DraI ttt|aaa	1359, 3990, 4682, 4701
+EagI c|ggccg	1132, 2498
+EcoRI g|aattc	1097
+EcoRV gat|atc	none
+EgeI ggc|gcc	2593
+FseI ggccgg|cc	none
+FspI tgc|gca	1463, 2002, 2694, 4345
+HaeIII gg|cc	11, 65, 238, 431, 1134, 1433, 1722, 1864, 2014, 2339, 2345, 2354, 2397, 2500, 2674, 3065, 3092, 3317, 3590, 4177, 4444, 4524, 4982, 5416, 5434, 5445
+HincII gty|rac	678, 1123, 1298
+HindIII a|agctt	757, 2414
+HinfI g|antc	564, 842, 958, 1074, 1119, 1762, 1784, 2420, 3077, 3211, 3263, 3370, 4569, 5086
+HpaI gtt|aac	1298
+HpaII c|cgg	1127, 1409, 1610, 2497, 2574, 2596, 2624, 2755, 2845, 2912, 3093, 3496, 3530, 4031, 4273, 4383, 4450, 4484, 4888, 5078, 5104, 5251
+KasI g|gcgcc	2591
+KpnI ggtac|c	1113, 2052
+MboI |gatc	662, 747, 1401, 1405, 1441, 1995, 2763, 2841, 2922, 2931, 3009, 3386, 3885, 3921, 3938, 4196, 4242, 4260, 4601, 4706, 4718, 4796, 4804, 4815, 4890, 5468
+MfeI c|aattg	1307
+MluI a|cgcgt	1103
+MscI tgg|cca	11, 65, 2674
+MseI t|taa	161, 784, 830, 849, 917, 1052, 1067, 1155, 1297, 1358, 1504, 1775, 1873, 1890, 1901, 1913, 1924, 2447, 3436, 3617, 3989, 4354, 4393, 4628, 4681, 4695, 4700, 4752
+MspI c|cgg	1127, 1409, 1610, 2497, 2574, 2596, 2624, 2755, 2845, 2912, 3093, 3496, 3530, 4031, 4273, 4383, 4450, 4484, 4888, 5078, 5104, 5251
+NaeI gcc|ggc	1611, 3094
+NarI gg|cgcc	2592
+NcoI c|catgg	514, 2009, 2305, 3024
+NdeI ca|tatg	388
+NdeII |gatc	662, 747, 1401, 1405, 1441, 1995, 2763, 2841, 2922, 2931, 3009, 3386, 3885, 3921, 3938, 4196, 4242, 4260, 4601, 4706, 4718, 4796, 4804, 4815, 4890, 5468
+NgoMIV g|ccggc	1609, 3092
+NheI g|ctagc	1086
+NlaIII catg|	118, 136, 458, 518, 1175, 2013, 2146, 2218, 2309, 2466, 2811, 2997, 3028, 3054, 3543, 3627, 3732, 4125, 4161, 4239, 4249, 4740, 5460
+NotI gc|ggccgc	1132
+NruI tcg|cga	none
+NsiI atgca|t	2148, 2220
+PacI ttaat|taa	none
+PciI a|catgt	none
+PhoI gg|cc	11, 65, 238, 431, 1134, 1433, 1722, 1864, 2014, 2339, 2345, 2354, 2397, 2500, 2674, 3065, 3092, 3317, 3590, 4177, 4444, 4524, 4982, 5416, 5434, 5445
+PmeI gttt|aaac	none
+PmlI cac|gtg	none
+PsiI tta|taa	1278, 1842
+PstI ctgca|g	839, 2645
+PvuI cgat|cg	665, 1444, 4199
+PvuII cag|ctg	2074, 2698
+RsaI gt|ac	99, 373, 453, 486, 537, 702, 1064, 1111, 2050, 2898, 3411, 4087
+SacI gagct|c	730
+SacII ccgc|gg	none
+SalI g|tcgac	1121
+SbfI cctgca|gg	none
+ScaI agt|act	1064, 4087
+SfoI ggc|gcc	2593
+SmaI ccc|ggg	1128
+SnaBI tac|gta	494
+SpeI a|ctagt	153
+SphI gcatg|c	2146, 2218, 2997
+SspI aat|att	6, 53, 1922, 3763
+SstI gagct|c	730
+SstII ccgc|gg	none
+StuI agg|cct	2397
+SwaI attt|aaat	none
+TaqI t|cga	824, 945, 1093, 1122, 1163, 1404, 1679, 2441, 2705, 2861, 2885, 2921, 3083, 3274, 3373, 3914, 5358, 5463
+TliI c|tcgag	1092
+VspI at|taat	161, 4393
+XbaI t|ctaga	1115
+XhoI c|tcgag	1092
+XmaI c|ccggg	1126

@@ -125,7 +125,7 @@ export default {
       plasmidState: {
         plasmidLength: 0,
         plasmidName: 'Unknown',
-        plasmidLayout: YAPV.layout.circular({length: 5633}),
+        plasmidLayout: YAPV.layout.circular({length: 0}),
         plasmidLengthString: "0 bp"
       },
       dropzoneOptions: {

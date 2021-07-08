@@ -1,6 +1,7 @@
 <template>
   <v-app>
     <v-main>
+
       <div align="center">
         <img src="./assets/HappyCell.png" width="10%">
         <h4>
@@ -9,93 +10,23 @@
         <br/>
       </div>
         <RestrictionSiteViewer/>
-<!--        <br/> <br/>-->
-<!--        <v-btn-->
-<!--            elevation="2"-->
-<!--            rounded-->
-<!--            color="primary"-->
-<!--            dark-->
-<!--            v-on:click="click_button"-->
-<!--        >pass two strings to backend-->
-<!--        </v-btn>-->
-<!--        <br/> <br/>-->
-<!--      </div>-->
-<!--      <br/>-->
-<!--      <DropZone/>-->
-<!--      <br/> <br/>-->
-
-<!--      <div align="center">-->
-<!--  <v-btn -->
-<!--    elevation="2"-->
-<!--    color="primary"-->
-<!--    v-on:click="click_button2"-->
-<!--  >click me to see plasmid viewer :)-->
-<!--  </v-btn>-->
-<!--    </div>-->
-<!--      <div align="center">-->
-<!--        <PlasmidViewer/>-->
-<!--      </div>-->
       <AdFooter/>
     </v-main>
   </v-app>
 </template>
 
-
 <script>
 
-import axios from "axios";
 import AdFooter from './components/AdFooter.vue'
 import 'vue2-dropzone/dist/vue2Dropzone.min.css'
 import RestrictionSiteViewer from "@/components/Viewer/RestrictionSiteViewer";
 
+
 export default {
   name: 'App',
   components: {RestrictionSiteViewer, AdFooter},
-
-
   methods: {
-
-    click_button() {
-      // buttons is for testing axios.post,
-      // and pass string by two different ways: URL and parameter
-      console.log('This is the Frontend2.')
-      axios
-          .post("http://localhost:8000/echopost/hi")
-          .then(function (response) {
-            console.log(response);
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
-
-
-      // pass short string using para
-      axios({
-        method: 'post',
-        url: "http://localhost:8000/postStringTest/",
-        data: {"name": "test string to the backend"},
-      })
-          .then(function (response) {
-            console.log(response);
-          })
     },
-
-     click_button2() {
-      // buttons is to get restriction sites info,
-      console.log('get restriction sites')
-      axios.get('http://localhost:8000/files_return/')
-          .then(function (response) {
-            console.log(response);
-          })
-    },
-    plasmid_file_handler() {
-      // buttons is to get restriction sites info,
-      axios.get('http://localhost:8000/files_return/')
-          .then(function (response) {
-            console.log(response);
-          })
-    },
-  },
 };
 
 </script>

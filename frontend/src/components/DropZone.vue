@@ -29,7 +29,6 @@
 
 import vue2Dropzone from 'vue2-dropzone'
 import 'vue2-dropzone/dist/vue2Dropzone.min.css'
-//import axios from "axios";
 export default {
   name: 'app',
   components: {
@@ -51,7 +50,6 @@ export default {
         headers: {"My-Awesome-Header": "header value"},
         dictDefaultMessage: "<i class='fa fa-cloud-upload'></i>Input Fasta File"
       }
-
     }
   }
 }
