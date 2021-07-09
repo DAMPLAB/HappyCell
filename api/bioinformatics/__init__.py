@@ -12,8 +12,3 @@ from .restriction_sites import (
     format_fasta_file,
     calculate_length_of_plasmid,
 )
-
-# from .res_site_dict import (
-#     Alph_res_site_dict,
-#     pCI_res_site_dict,
-# )

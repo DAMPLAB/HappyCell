@@ -84,6 +84,7 @@ async def create_plasmid_struct(file: bytes = File(...)):
     name, sequence = format_fasta_file(file)
     sequence_length = calculate_length_of_plasmid(sequence)
     sites = find_site(sequence)
+    print(sites)  # for testing sites
     return {
         "sequence_name": name,
         "sequence_length": sequence_length,

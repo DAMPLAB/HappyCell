@@ -31,6 +31,33 @@
 						}"
         ></Axis>
 
+        <PlasmidMarker v-bind:layout="plasmidState.plasmidLayout"
+							v-bind:displayConfig="{
+								width: 10,
+								distance: 110,
+								style: 'stroke: #755A96; fill: #755A96; stroke-width: 1;',
+								anchor: {
+									width: 10,
+									height: 10
+								}
+							}"
+							v-bind:location="{ start: 1, end: 208 }"
+							direction="+"
+							>
+				<Label v-bind:layout="plasmidState.plasmidLayout"
+								text=' res. sites from backend'
+								v-bind:location="{ start: 1, end: 208 }"
+								v-bind:displayConfig="{
+									type: 'text',
+									distance: 110,
+									style: 'text-anchor: middle; font: 12px \'Arial\', sans-serif; fill: black;',
+									hOffset: 0,
+									vOffset: -30,
+								}">
+				</Label>
+
+			</PlasmidMarker>
+
 
       </PlasmidTrack>
       <Label v-bind:layout="plasmidState.plasmidLayout"
@@ -88,19 +115,23 @@
 
 import vue2Dropzone from 'vue2-dropzone'
 import 'vue2-dropzone/dist/vue2Dropzone.min.css'
-import PlasmidMap from "@/components/Viewer/PlasmidMap";
-import PlasmidTrack from "@/components/Viewer/PlasmidTrack";
-import Axis from "@/components/Viewer/PlasmidAxis";
-import Label from "@/components/Viewer/PlasmidLabel";
+import PlasmidMap from "./PlasmidMap.vue";
+import PlasmidTrack from "./PlasmidTrack.vue";
+import PlasmidMarker from "./PlasmidMarker.vue";
+import Axis from "./PlasmidAxis.vue";
+import Label from "./PlasmidLabel.vue";
 import YAPV from "@yapv/core";
-//import axios from "axios";
+
+
+
+
 export default {
   name: 'RestrictionSiteViewer',
   components: {
     vueDropzone: vue2Dropzone,
     PlasmidMap,
     PlasmidTrack,
-    //PlasmidMarker,
+    PlasmidMarker,
     Axis,
     Label,
   },

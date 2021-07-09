@@ -1,27 +1,30 @@
 # import csv
+# from typing import Dict
 #
-# # read pCIneo_res_sites and creat a dict of restriction sites
-# with open('../files/pCINeo_res_sites.txt', 'r') as pCI:
-#         reader = csv.reader(pCI, delimiter=' ')
-#         pCI_res_site_dict = {}
+#
+# def all_res_site_dict(sites_file_path) -> Dict[str, str]:
+#     """
+#
+#     Args:
+#         sites_file_path:
+#         a txt file path of Alphabetized List of Recognition Specificities
+#         https://www.neb.com/tools-and-resources/selection-charts/alphabetized-list-of-recognition-specificities
+#
+#     Returns:
+#         a dict with all restriction endonuclease
+#         recognition specificities = {"Name": 'sequence'}...
+#
+#     """
+#
+#     with open(sites_file_path, 'r') as all_sites:
+#         reader = csv.reader(all_sites, delimiter='	')
+#         Alph_res_site_dict = {}
 #         for row in reader:
-#             pCI_res_site_dict[row[0]] = row[1]
-#         for key in pCI_res_site_dict:
-#              pCI_res_site_dict[key] = pCI_res_site_dict[key].replace('|', '')
-#              if '\t' in pCI_res_site_dict[key]:
-#                 pCI_res_site_dict[key] = (pCI_res_site_dict[key][:pCI_res_site_dict[key].index('\t')]).upper()
+#             if len(row) < 2:
+#                 continue
+#             Alph_res_site_dict[row[1]] = row[0]
+#         for key in Alph_res_site_dict:
+#             Alph_res_site_dict[key] = Alph_res_site_dict[key].replace('/', '')
+#     return Alph_res_site_dict
 #
-# #print(res_site_dict)
-#
-#
-# with open('../files/Alphabetized_List_of_Recognition_Specificities.txt', 'r') as Alph:
-#     reader = csv.reader(Alph, delimiter='	')
-#     Alph_res_site_dict = {}
-#     for row in reader:
-#         if len(row)<2:
-#             continue
-#         Alph_res_site_dict[row[1]] = row[0]
-#     for key in Alph_res_site_dict:
-#         Alph_res_site_dict[key] = Alph_res_site_dict[key].replace('/', '')
-#
-# #print(Alph_res_site_dict)
+# Alph_res_site_map = all_res_site_dict('../files/Alphabetized_List_of_Recognition_Specificities.txt')
