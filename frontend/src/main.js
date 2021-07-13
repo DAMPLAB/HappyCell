@@ -48,8 +48,14 @@ const router = new Router({
 })
 
 new Vue({
+<<<<<<< HEAD
     el: '#app',
     vuetify,
     render: h => h(App),
     router,
 }).$mount('#app')
+=======
+  vuetify,
+  render: h => h(App)
+}).$mount('#app')
+>>>>>>> 9e209e4719d2b9566ee992bee792c7ba72c177ce

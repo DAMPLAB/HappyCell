@@ -26,6 +26,7 @@
   </v-container>
 </template>
 <script>
+
 import vue2Dropzone from 'vue2-dropzone'
 import 'vue2-dropzone/dist/vue2Dropzone.min.css'
 export default {
@@ -37,7 +38,6 @@ export default {
     droppedSbol(input_file) {
       console.log(input_file)
       console.log('Hello!'+ "File Dropped :)")
-      // Validation from backend goes here.
     }
   },
   data: function () {
@@ -47,7 +47,7 @@ export default {
         thumbnailWidth: 150,
         maxFilesize: 0.5,
         headers: {"My-Awesome-Header": "header value"},
-        dictDefaultMessage: "<i class='fa fa-cloud-upload'></i>Input SBOL File"
+        dictDefaultMessage: "<i class='fa fa-cloud-upload'></i>Input Fasta File"
       }
     }
   }
