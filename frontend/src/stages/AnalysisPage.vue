@@ -1,9 +1,11 @@
 <template>
   <v-app>
+    <Sidebar/>
     <v-container>
-      <Navbar/>
+      <Navbar/>\
       <v-main>
-        <Sidebar/>
+        <v-divider></v-divider>
+
         <v-row style="padding-left: 15%;">
           <v-col
               v-for="n in cardDetails"
@@ -14,9 +16,11 @@
                 class="pa-2"
                 outlined
                 tile
-                height=250px
+                height=350px
             >
-              <PlasmidViewer/>
+              <v-card-title style="justify-content: center">
+                {{ n.title }}
+              </v-card-title>
             </v-card>
           </v-col>
         </v-row>
@@ -75,14 +79,13 @@ import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import AdFooter from "../components/AdFooter";
 import 'vue2-dropzone/dist/vue2Dropzone.min.css'
-import PlasmidViewer from "../components/PlasmidViewer/PlasmidViewer";
+//import PlasmidViewer from "../components/PlasmidViewer/PlasmidViewer";
 export default {
   name: 'AnalysisPage',
   components: {
     AdFooter,
     Sidebar,
     Navbar,
-    PlasmidViewer,
   },
   data: () => ({
     cardDetails: [

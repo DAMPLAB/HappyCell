@@ -1,6 +1,7 @@
 <template>
   <v-app>
     <Navbar/>
+    <Sidebar/>
     <v-main>
       <Title/>
       <Description/>
@@ -16,6 +17,7 @@ import Title from "../components/Title";
 import Dropzone from "../components/DropZone";
 import AdFooter from "../components/AdFooter";
 import Description from "../components/Description";
+import Sidebar from "../components/Sidebar";
 export default {
   name: 'InitialPage',
   components: {
@@ -24,6 +26,7 @@ export default {
     Dropzone,
     AdFooter,
     Title,
+    Sidebar,
   },
   data: () => ({
     //

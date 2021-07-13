@@ -21,12 +21,7 @@
             <br/>
             <br/>
 
-            Donec tincidunt erat odio, condimentum viverra lectus elementum sit amet.
-            Vestibulum tincidunt viverra lectus ac tristique.
-            Quisque quis bibendum magna.
-            Ut vestibulum id nunc hendrerit gravida. Nulla eget tristique nulla,
-            eget vulputate massa. Nulla feugiat tincidunt nunc, vel ultrices
-            risus ultrices vitae. Mauris hendrerit eleifend orci sed aliquet.
+            SomeThing Something, blah blah blah....
           </span>
         </v-sheet>
       </v-col>

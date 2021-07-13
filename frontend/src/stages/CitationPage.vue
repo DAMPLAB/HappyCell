@@ -1,9 +1,10 @@
 <template>
   <v-app>
+    <Sidebar/>
     <v-container>
       <Navbar/>
       <v-main>
-        <Sidebar/>
+
         <v-row style="padding-left: 15%; height: 800px">
           <v-col>
             <v-card

@@ -1,7 +1,7 @@
 <template>
   <v-app>
+    <Sidebar/>
     <v-row>
-      <Sidebar/>
       <Navbar/>
       <v-col>
         <v-main>

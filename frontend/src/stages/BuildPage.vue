@@ -1,9 +1,9 @@
 <template>
   <v-app>
+    <Sidebar/>
     <v-container>
       <Navbar/>
       <v-main>
-        <Sidebar/>
         <v-row style="padding-left: 15%;">
           <v-col
               v-for="n in cardDetails"
