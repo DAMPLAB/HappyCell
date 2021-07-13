@@ -43,7 +43,10 @@
 
 
 
-        <PlasmidMarker v-bind:layout="plasmidState.plasmidLayout"
+        <PlasmidMarker
+            v-for="(m,n) in maps"
+         :key="n"
+            v-bind:layout="plasmidState.plasmidLayout"
 							v-bind:displayConfig="{
 								width: 10,
 								distance: 110,
@@ -53,12 +56,12 @@
 									height: 10
 								}
 							}"
-							v-bind:location="{ start: 1, end: 208 }"
+							v-bind:location="{ start: m-20, end: m }"
 							direction="+"
 							>
 				<Label v-bind:layout="plasmidState.plasmidLayout"
-								text=' res. sites from backend...'
-								v-bind:location="{ start: 1, end: 208 }"
+								text = "m,,,"
+								v-bind:location="{ start: m-10, end: m }"
 								v-bind:displayConfig="{
 									type: 'text',
 									distance: 110,
