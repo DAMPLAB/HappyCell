@@ -1,12 +1,15 @@
 """
 --------------------------------------------------------------------------------
 Description: [main python file of the API backend]
-
 Written by [Beining Ouyang] [bouyang@bu.edu], [Jun.24.2021]
 [PROJECT LICENCSE HERE]
 --------------------------------------------------------------------------------
 """
-<<<<<<< HEAD
+
+
+
+
+
 from fastapi import FastAPI, File
 from bioinformatics.restriction_sites import (
     find_site,
@@ -16,15 +19,6 @@ from bioinformatics.restriction_sites import (
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
-=======
-
-from fastapi import FastAPI, File
-from bioinformatics.restriction_sites import find_site
-from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
-
-
->>>>>>> 9e209e4719d2b9566ee992bee792c7ba72c177ce
 origins = [
     "http://localhost.tiangolo.com",
     "https://localhost.tiangolo.com",
@@ -32,7 +26,11 @@ origins = [
     "http://localhost:8080"]
 
 # --------------------------- CONSTANT DECLARATION -----------------------------
+# call that func. all_res_map  before here
+
 app = FastAPI()
+
+
 path = "/code/HappyCell/api"
 
 app.add_middleware(
@@ -83,7 +81,6 @@ async def create_file(file: bytes = File(...)):
     removal_list = [", ", "'", "[", "]"]
     for entry in removal_list:
         input_text = input_text.replace(entry, '')
-<<<<<<< HEAD
     global res
     res = find_site(sequence=input_text)
     return res
@@ -94,7 +91,13 @@ async def create_plasmid_struct(file: bytes = File(...)):
     name, sequence = format_fasta_file(file)
     sequence_length = calculate_length_of_plasmid(sequence)
     sites = find_site(sequence)
+    # print(sequence, len(sequence)) # print to testing sequence
     print(sites)  # for testing sites
+    # TODO: the length of sequence is with header?why?
+    #  Need to get the correct clean sequence no header and space.
+    #  name of the plasmid not correct ???
+    #  lost infomation of exactly cutting index. need to confirm
+
     return {
         "sequence_name": name,
         "sequence_length": sequence_length,
@@ -102,15 +105,7 @@ async def create_plasmid_struct(file: bytes = File(...)):
         "basepair_name": f'{sequence_length} bp'
     }
 
-
-# post a file from frontend to backend ???
-# question: is this the right way to return dropzone data to frond end
 @app.get("/files_return/")
 async def return_sites():
     print(res)
     return {"return": f"{res}"}
-=======
-    res = find_site(sequence=input_text)
-    print(res)
-    return res
->>>>>>> 9e209e4719d2b9566ee992bee792c7ba72c177ce
