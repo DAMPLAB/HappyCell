@@ -16,9 +16,7 @@
                 tile
                 height=250px
             >
-              <v-card-title style="justify-content: center">
-                {{ n.title }}
-              </v-card-title>
+              <PlasmidViewer/>
             </v-card>
           </v-col>
         </v-row>
@@ -73,15 +71,18 @@
 </template>
 
 <script>
-import Navbar from "@/components/Navbar";
-import Sidebar from "@/components/Sidebar";
-import AdFooter from "@/components/AdFooter";
+import Navbar from "../components/Navbar";
+import Sidebar from "../components/Sidebar";
+import AdFooter from "../components/AdFooter";
+import 'vue2-dropzone/dist/vue2Dropzone.min.css'
+import PlasmidViewer from "../components/PlasmidViewer/PlasmidViewer";
 export default {
   name: 'AnalysisPage',
   components: {
     AdFooter,
     Sidebar,
     Navbar,
+    PlasmidViewer,
   },
   data: () => ({
     cardDetails: [

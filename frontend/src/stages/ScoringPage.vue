@@ -14,9 +14,9 @@
 </template>
 
 <script>
-import Navbar from "./components/Navbar";
-import AdFooter from "./components/AdFooter";
-import Sidebar from "./components/Sidebar";
+import Navbar from "../components/Navbar";
+import Sidebar from "../components/Sidebar";
+import AdFooter from "../components/AdFooter";
 export default {
   name: 'ScoringPage',
   components: {

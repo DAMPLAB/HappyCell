@@ -1,8 +1,9 @@
 <template>
   <v-footer
       app
-      color="secondary"
-      height="60"
+      color="light-blue lighten-5"
+      height="64.5%"
+      style="z-index: 100"
   >
     <v-row align-content="stretch" justify="space-between" align="center">
       <v-img
@@ -24,16 +25,18 @@
           src="https://cidar-logo-asset-bucket.s3.amazonaws.com/damp-lab-logo-1x.png"
       ></v-img>
     <div class="mt-10">
-      <p class="black--text">Copyright 2020, CIDAR Lab - All Rights Reserved</p>
+      <p class="black--text">Copyright 2021, CIDAR Lab - All Rights Reserved</p>
     </div>
     </v-row>
   </v-footer>
-
 </template>
+
+
 <script>
 export default {
   name: "AdFooter"
 }
 </script>
+
 <style scoped>
 </style>
