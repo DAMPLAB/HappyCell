@@ -12,6 +12,27 @@ from typing import (
     Dict,
 )
 
+# create a dic for res. sites, we used some common restriction enzyme here
+Alph_res_site_map = {
+    "ApaI": 'GGGCCC',
+    "BamHI": 'GGATCC',
+    "BglII": 'AGATCT',
+    "EcoRI": 'GAATTC',
+    "HindIII": 'AAGCTT',
+    "KpnI":	'GGTACC',
+    "NcoI":	'CCATGG',
+    "NdeI":	'CATATG',
+    "NheI":	'GCTAGC',
+    "NotI":	'GCGGCCGC',
+    "SacI": 'GAGCTC',
+    "SalI":	'GTCGAC',
+    "SphI":	'GCATGC',
+    "XbaI":	'TCTAGA',
+    "XhoI":	'CTCGAG',
+}
+
+
+
 
 def format_fasta_file(sequence_file):
     """
@@ -86,13 +107,14 @@ def all_res_site_dict(sites_file_path) -> Dict[str, str]:
             Alph_res_site_dict[row[1]] = row[0]
         for key in Alph_res_site_dict:
             Alph_res_site_dict[key] = Alph_res_site_dict[key].replace('/', '')
+        # TODO: should not get rid of "/" it is useful information
     return Alph_res_site_dict
 
 
-cwd = os.getcwd()
-file_root = os.path.join(os.getcwd(), 'files')
-all_sites_fp = os.path.join(file_root, 'Alphabetized_List_of_Recognition_Specificities.txt')
-Alph_res_site_map = all_res_site_dict(all_sites_fp)
+# cwd = os.getcwd()
+# file_root = os.path.join(os.getcwd(), 'files')
+# all_sites_fp = os.path.join(file_root, 'Alphabetized_List_of_Recognition_Specificities.txt')
+# Alph_res_site_map = all_res_site_dict(all_sites_fp)
 
 
 

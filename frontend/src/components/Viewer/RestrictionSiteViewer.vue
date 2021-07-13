@@ -1,5 +1,15 @@
 <template>
   <v-container>
+
+<!--    added following div for testing v-for -->
+    <div v-for="(m, n) in maps"
+         :key="m">
+      {{ n}}: {{ m}}
+  </div>
+
+<!--    added div for testing v-for -->
+
+
     <div v-if="viewerState.fileDropped" style="text-align: center;" >
     <PlasmidMap v-bind:displayConfig="{
 								width: 500,
@@ -31,6 +41,8 @@
 						}"
         ></Axis>
 
+
+
         <PlasmidMarker v-bind:layout="plasmidState.plasmidLayout"
 							v-bind:displayConfig="{
 								width: 10,
@@ -45,7 +57,7 @@
 							direction="+"
 							>
 				<Label v-bind:layout="plasmidState.plasmidLayout"
-								text=' res. sites from backend'
+								text=' res. sites from backend...'
 								v-bind:location="{ start: 1, end: 208 }"
 								v-bind:displayConfig="{
 									type: 'text',
@@ -58,8 +70,13 @@
 
 			</PlasmidMarker>
 
+<!--creat markers creat a loop, v-for creat markers creat a loop, v-for https://learnvue.co/2020/02/6-techniques-to-write-better-vuejs-v-for-loops/  -->
+ -->
+
 
       </PlasmidTrack>
+
+
       <Label v-bind:layout="plasmidState.plasmidLayout"
              v-bind:text="plasmidState.plasmidName"
              v-bind:location="{ start: 0, end: 0 }"
@@ -113,6 +130,9 @@
 </template>
 <script>
 
+
+
+
 import vue2Dropzone from 'vue2-dropzone'
 import 'vue2-dropzone/dist/vue2Dropzone.min.css'
 import PlasmidMap from "./PlasmidMap.vue";
@@ -144,6 +164,13 @@ export default {
       this.plasmidState.plasmidLength = resp['sequence_length']
       this.plasmidState.plasmidName = resp['sequence_name']
       this.plasmidState.plasmidLengthString = resp['basepair_name']
+      this.maps = resp['restriction_sites']
+      // console testing all res_site and index
+      for(var key in resp['restriction_sites']) {
+        console.log(key);
+        console.log(resp['restriction_sites'][key]);
+      }
+
       console.log('Hello!' + "File Dropped :)")
     }
 
@@ -159,13 +186,16 @@ export default {
         plasmidLayout: YAPV.layout.circular({length: 0}),
         plasmidLengthString: "0 bp"
       },
+      maps: {
+
+      },
       dropzoneOptions: {
         url: 'http://localhost:8000/display_plasmid/',
         thumbnailWidth: 150,
         maxFilesize: 0.5,
         headers: {"My-Awesome-Header": "header value"},
         dictDefaultMessage: "<i class='fa fa-cloud-upload'></i>Input Fasta File"
-      }
+      },
     }
   }
 }

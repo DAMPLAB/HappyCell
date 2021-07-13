@@ -7,6 +7,10 @@ Written by [Beining Ouyang] [bouyang@bu.edu], [Jun.24.2021]
 --------------------------------------------------------------------------------
 """
 
+
+
+
+
 from fastapi import FastAPI, File
 from bioinformatics.restriction_sites import (
     find_site,
@@ -23,7 +27,11 @@ origins = [
     "http://localhost:8080"]
 
 # --------------------------- CONSTANT DECLARATION -----------------------------
+# call that func. all_res_map  before here
+
 app = FastAPI()
+
+
 path = "/code/HappyCell/api"
 
 app.add_middleware(
@@ -84,7 +92,13 @@ async def create_plasmid_struct(file: bytes = File(...)):
     name, sequence = format_fasta_file(file)
     sequence_length = calculate_length_of_plasmid(sequence)
     sites = find_site(sequence)
+    # print(sequence, len(sequence)) # print to testing sequence
     print(sites)  # for testing sites
+    # TODO: the length of sequence is with header?why?
+    #  Need to get the correct clean sequence no header and space.
+    #  name of the plasmid not correct ???
+    #  lost infomation of exactly cutting index. need to confirm
+
     return {
         "sequence_name": name,
         "sequence_length": sequence_length,
@@ -92,9 +106,6 @@ async def create_plasmid_struct(file: bytes = File(...)):
         "basepair_name": f'{sequence_length} bp'
     }
 
-
-# post a file from frontend to backend ???
-# question: is this the right way to return dropzone data to frond end
 @app.get("/files_return/")
 async def return_sites():
     print(res)
