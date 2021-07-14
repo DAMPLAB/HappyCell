@@ -46,33 +46,32 @@
 							v-bind:displayConfig="{
 								width: 10,
 								distance: 110,
-								style: 'stroke: #755A96; fill: #755A96; stroke-width: 1;',
+								style: 'stroke: #428bca; fill: #428bca; stroke-width: 1;',
 								anchor: {
 									width: 10,
 									height: 10
 								}
 							}"
-            v-bind:location="{ start: m-30, end: m }"
+            v-bind:location="{ start: m-10, end: m+10 }"
             direction="+"
         >
 			</PlasmidMarker>
-
-
         <Label
             v-for="(m,n) in maps"
-         :key="n"
+         :key="m"
             v-bind:layout="plasmidState.plasmidLayout"
             v-bind:text= "n"
-            v-bind:location="{ start: m-30, end: m }"
+            v-bind:location="{ start: m-50, end: m+80 }"
             direction="+"
             v-bind:displayConfig="{
 									type: 'text',
-									distance: 110,
-									style: 'text-anchor: middle; font: 12px \'Arial\', sans-serif; fill: black;',
+									distance: 130,
+									style: 'text-anchor: middle; font: 10px \'Arial\', sans-serif; fill: black;',
 									hOffset: 0,
-									vOffset: -50,
+									vOffset: 0,
 								}">
 				</Label>
+
 
 
 
@@ -83,8 +82,6 @@
 
 
       </PlasmidTrack>
-
-
       <Label v-bind:layout="plasmidState.plasmidLayout"
              v-bind:text="plasmidState.plasmidName"
              v-bind:location="{ start: 0, end: 0 }"
