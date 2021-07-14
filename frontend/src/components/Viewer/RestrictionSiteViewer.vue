@@ -1,14 +1,11 @@
 <template>
+
   <v-container>
-
-<!--    added following div for testing v-for -->
-    <div v-for="(m, n) in maps"
+<div
+    v-for="(m, n) in maps"
          :key="m">
-      {{ n}}: {{ m}}
-  </div>
-
-<!--    added div for testing v-for -->
-
+   {{n}}:{{m}}
+</div>
 
     <div v-if="viewerState.fileDropped" style="text-align: center;" >
     <PlasmidMap v-bind:displayConfig="{
@@ -42,7 +39,6 @@
         ></Axis>
 
 
-
         <PlasmidMarker
             v-for="(m,n) in maps"
          :key="n"
@@ -56,22 +52,31 @@
 									height: 10
 								}
 							}"
-							v-bind:location="{ start: m-20, end: m }"
-							direction="+"
-							>
-				<Label v-bind:layout="plasmidState.plasmidLayout"
-								text = "m,,,"
-								v-bind:location="{ start: m-10, end: m }"
-								v-bind:displayConfig="{
+            v-bind:location="{ start: m-30, end: m }"
+            direction="+"
+        >
+			</PlasmidMarker>
+
+
+        <Label
+            v-for="(m,n) in maps"
+         :key="n"
+            v-bind:layout="plasmidState.plasmidLayout"
+            v-bind:text= "n"
+            v-bind:location="{ start: m-30, end: m }"
+            direction="+"
+            v-bind:displayConfig="{
 									type: 'text',
 									distance: 110,
 									style: 'text-anchor: middle; font: 12px \'Arial\', sans-serif; fill: black;',
 									hOffset: 0,
-									vOffset: -30,
+									vOffset: -50,
 								}">
 				</Label>
 
-			</PlasmidMarker>
+
+
+
 
 <!--creat markers creat a loop, v-for creat markers creat a loop, v-for https://learnvue.co/2020/02/6-techniques-to-write-better-vuejs-v-for-loops/  -->
  -->
@@ -168,12 +173,13 @@ export default {
       this.plasmidState.plasmidName = resp['sequence_name']
       this.plasmidState.plasmidLengthString = resp['basepair_name']
       this.maps = resp['restriction_sites']
+
+
       // console testing all res_site and index
       for(var key in resp['restriction_sites']) {
         console.log(key);
         console.log(resp['restriction_sites'][key]);
       }
-
       console.log('Hello!' + "File Dropped :)")
     }
 
@@ -190,7 +196,6 @@ export default {
         plasmidLengthString: "0 bp"
       },
       maps: {
-
       },
       dropzoneOptions: {
         url: 'http://localhost:8000/display_plasmid/',
