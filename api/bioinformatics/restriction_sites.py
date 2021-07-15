@@ -61,11 +61,12 @@ def find_site(sequence: str) -> Dict[str, int]:
 
     Args:
         sequence: str of sequence
-    Returns: return a dict: key: str, name of the res. sites., value:
+    Returns: return sites_index_map = {}: key: str, name of the res. sites., value:
     index of the restriction sites
 
     """
     sites_index_map = {}
+
     for re_site in Alph_res_site_map:
         for i in range(len(sequence) - len(Alph_res_site_map[re_site]) + 1):
             if sequence[i: (i + len(Alph_res_site_map[re_site]))] == Alph_res_site_map[re_site]:

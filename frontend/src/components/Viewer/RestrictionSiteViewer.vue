@@ -1,11 +1,13 @@
 <template>
 
   <v-container>
-<div
-    v-for="(m, n) in maps"
-         :key="m">
-   {{n}}:{{m}}
+
+    <div
+    v-for="(n,m) in indexs"
+         :key="n">
+      {{m}}:{{n}}
 </div>
+
 
     <div v-if="viewerState.fileDropped" style="text-align: center;" >
     <PlasmidMap v-bind:displayConfig="{
@@ -56,8 +58,10 @@
             direction="+"
         >
 			</PlasmidMarker>
+
+
         <Label
-            v-for="(m,n) in maps"
+            v-for="(m,n) in indexs"
          :key="m"
             v-bind:layout="plasmidState.plasmidLayout"
             v-bind:text= "n"
@@ -65,8 +69,8 @@
             direction="+"
             v-bind:displayConfig="{
 									type: 'text',
-									distance: 130,
-									style: 'text-anchor: middle; font: 10px \'Arial\', sans-serif; fill: black;',
+									distance: 140,
+									style: 'text-anchor: middle; font: 9px \'Arial\', sans-serif; fill: black;',
 									hOffset: 0,
 									vOffset: 0,
 								}">
@@ -170,12 +174,13 @@ export default {
       this.plasmidState.plasmidName = resp['sequence_name']
       this.plasmidState.plasmidLengthString = resp['basepair_name']
       this.maps = resp['restriction_sites']
+      this.indexs = resp['site_index']
 
 
       // console testing all res_site and index
-      for(var key in resp['restriction_sites']) {
+      for(var key in resp['site_index']) {
         console.log(key);
-        console.log(resp['restriction_sites'][key]);
+        console.log(resp['site_index'][key]);
       }
       console.log('Hello!' + "File Dropped :)")
     }
@@ -194,6 +199,9 @@ export default {
       },
       maps: {
       },
+       indexs: {
+       },
+
       dropzoneOptions: {
         url: 'http://localhost:8000/display_plasmid/',
         thumbnailWidth: 150,
