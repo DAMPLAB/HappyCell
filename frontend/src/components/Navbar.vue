@@ -3,7 +3,7 @@
       app
       color="light-blue lighten-5"
       dark
-      height="30"
+      height="50"
   >
   </v-app-bar>
 </template>

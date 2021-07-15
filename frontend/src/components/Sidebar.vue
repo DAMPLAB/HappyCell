@@ -1,6 +1,6 @@
 <template>
   <v-card style="z-index: 100; position: fixed"
-          height="85%"
+          height="100%"
           outlined
 
   >

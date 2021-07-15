@@ -4,26 +4,51 @@
     <v-container>
       <Navbar/>\
       <v-main>
-        <v-divider></v-divider>
+
 
         <v-row style="padding-left: 15%;">
-          <v-col
-              v-for="n in cardDetails"
-              :key="n"
-              :cols="n.columns"
-          >
+          <v-col>
+            <RestrictionSiteViewer/>
+          </v-col>
+        </v-row>
+
+
+        <v-row style="padding-left: 15%;">
+          <v-col>
             <v-card
                 class="pa-2"
                 outlined
                 tile
-                height=350px
+                height=100px
+                style="border-style: solid; border-width: 3px; outline-color: darkgrey"
             >
               <v-card-title style="justify-content: center">
-                {{ n.title }}
+                Stuff about Plasmid
+
               </v-card-title>
+
+              <v-card-subtitle style="justify-content: center">
+
+                Plasmid name: Cloning vector pCI-neo
+
+Source/Vendor: Promega
+https://www.promega.jp/-/media/files/resources/protocols/technical-bulletins/0/pci-neo-mammalian-expression-vector-protocol.pdf?la=en
+Plasmid Type: Mammalian expression vector
+Cloning Method:  Restriction Enzyme
+Size: 5472
+Bacterial Resistance:	 Ampicillin
+Selectable Marker:	Neomycin
+GenBank: U47120.2
+https://www.ncbi.nlm.nih.gov/nuccore/U47120.2
+More info:
+https://www.addgene.org/vector-database/2184/
+              </v-card-subtitle>
+
             </v-card>
           </v-col>
         </v-row>
+
+
         <v-row style="padding-left: 15%;">
           <v-col>
             <v-card
@@ -79,13 +104,14 @@ import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import AdFooter from "../components/AdFooter";
 import 'vue2-dropzone/dist/vue2Dropzone.min.css'
-//import PlasmidViewer from "../components/PlasmidViewer/PlasmidViewer";
+import RestrictionSiteViewer from "../components/PlasmidViewer/RestrictionSiteViewer";
 export default {
   name: 'AnalysisPage',
   components: {
     AdFooter,
     Sidebar,
     Navbar,
+    RestrictionSiteViewer,
   },
   data: () => ({
     cardDetails: [

@@ -92,7 +92,10 @@ async def create_plasmid_struct(file: bytes = File(...)):
     sequence_length = calculate_length_of_plasmid(sequence)
     sites = find_site(sequence)
     # print(sequence, len(sequence)) # print to testing sequence
-    print(sites)  # for testing sites
+    sitesindex = {}  # a map which combine sites with index as one str
+    for i in sites:
+        sitesindex[i + " " +str(sites[i])] = sites[i]
+    print(sitesindex)  # for testing sites
     # TODO: the length of sequence is with header?why?
     #  Need to get the correct clean sequence no header and space.
     #  name of the plasmid not correct ???
@@ -102,7 +105,8 @@ async def create_plasmid_struct(file: bytes = File(...)):
         "sequence_name": name,
         "sequence_length": sequence_length,
         "restriction_sites": sites,
-        "basepair_name": f'{sequence_length} bp'
+        "basepair_name": f'{sequence_length} bp',
+        "site_index": sitesindex
     }
 
 @app.get("/files_return/")
