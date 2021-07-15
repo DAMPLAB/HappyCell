@@ -24,7 +24,7 @@
           src="https://cidar-logo-asset-bucket.s3.amazonaws.com/damp-lab-logo-1x.png"
       ></v-img>
     <div class="mt-10">
-      <p class="black--text">Copyright 2020, CIDAR Lab - All Rights Reserved</p>
+      <p class="black--text">Copyright 2021, CIDAR Lab - All Rights Reserved</p>
     </div>
     </v-row>
   </v-footer>
