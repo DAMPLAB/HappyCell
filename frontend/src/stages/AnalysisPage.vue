@@ -14,7 +14,7 @@
 
 
 
-          <div v-if="viewerState.fileDropped" style="text-align: center;" >
+
           <v-row style="padding-left: 15%;">
           <v-col>
             <v-card
@@ -105,7 +105,7 @@
             </v-card>
           </v-col>
         </v-row>
-        </div>
+
         <vue-dropzone
             ref="sbol-input"
             id="dropzone"
