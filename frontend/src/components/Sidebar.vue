@@ -1,14 +1,19 @@
 <template>
-  <v-card style="z-index: 100; position: fixed"
-          height="100%"
-          outlined
 
+  <v-card style="z-index: 100;
+  position: fixed;
+  top: 70px"
+          elevation="1"
+          height="70%"
+          outlined
   >
+
+
     <v-navigation-drawer permanent>
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="text-h6" style="text-align: center">
-            IBIS
+            HappyCell
           </v-list-item-title>
         </v-list-item-content>
       </v-list-item>
