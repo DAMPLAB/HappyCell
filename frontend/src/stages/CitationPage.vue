@@ -39,16 +39,15 @@ export default {
   data: () => ({
     cardDetails: [
       {
-        title: "Plasmid Viewer Goes Here",
-        subtitle: "Should be circular plasmid viewer with restriction sites.",
+        title: "... goes Here",
+        subtitle: "...",
         width: 100,
         height: 400,
         columns: 6,
       },
       {
-        title: "Textual Description of Passed in File Goes Here.",
-        subtitle: "Should be a line describing the symbology of the " +
-            "genetic circuit.",
+        title: "...",
+        subtitle: "this the subtitle.",
         width: 50,
         height: 50,
         columns: 6,

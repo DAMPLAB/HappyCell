@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <v-container>
+  <div style="padding-left: 15%">
+    <v-container  >
       <v-row justify="center" align="center" class="mt-10">
         <div class="text-md-h3">
           HappyCell
