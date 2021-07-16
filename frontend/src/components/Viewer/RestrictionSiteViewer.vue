@@ -2,11 +2,11 @@
 
   <v-container>
 
-    <div
-    v-for="(n,m) in indexs"
-         :key="n">
-      {{m}}:{{n}}
-</div>
+<!--    <div-->
+<!--    v-for="(n,m) in indexs"-->
+<!--         :key="n">-->
+<!--      {{m}}:{{n}}-->
+<!--</div>-->
 
 
     <div v-if="viewerState.fileDropped" style="text-align: center;" >
