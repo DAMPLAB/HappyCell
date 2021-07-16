@@ -119,7 +119,7 @@ export default {
      cardDetails_2:
       {
         title: "Description",
-        subtitle: "Should be circular plasmid viewer with restriction sites.",
+        subtitle: "Should be a line describing the symbology of the genetic circuit",
         width: 100,
         height: 400,
         columns: 6,
