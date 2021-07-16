@@ -3,12 +3,12 @@
     <v-container>
       <v-row justify="center" align="center" class="mt-10">
         <div class="text-md-h3">
-          Ibis
+          HappyCell
         </div>
       </v-row>
       <v-row justify="center" align="center">
         <div class="text-md-h5">
-          Flexible Judgement of Genetic Circuits
+          Your genetic design helper.
         </div>
       </v-row>
     </v-container>

@@ -15,13 +15,18 @@
 
 
 
+
+
+        <v-container>
+          <div v-if="viewerState.fileDropped" style="text-align: center;" >
+
           <v-row style="padding-left: 15%;">
           <v-col>
             <v-card
                 class="pa-2"
                 outlined
                 tile
-                height=330px
+                height=400px
                 style="border-style: solid; border-width: 3px; outline-color: darkgrey"
             >
               <v-card-title style="justify-content: center">
@@ -105,6 +110,8 @@
             </v-card>
           </v-col>
         </v-row>
+          </div>
+          </v-container>
 
         <vue-dropzone
             ref="sbol-input"
@@ -133,6 +140,7 @@ export default {
     Sidebar,
     Navbar,
     RestrictionSiteViewer,
+
   },
   methods: {
     droppedFastaFile(input_file, resp) {

@@ -193,6 +193,7 @@ export default {
         headers: {"My-Awesome-Header": "header value"},
         dictDefaultMessage: "<i class='fa fa-cloud-upload'></i>Input Fasta File"
       },
+
     }
   }
 }
