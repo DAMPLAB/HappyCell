@@ -95,9 +95,10 @@
 <script>
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
-import RestrictionSiteViewer from "../components/PlasmidViewer/RestrictionSiteViewer";
+import RestrictionSiteViewer from "../components/Viewer/RestrictionSiteViewer";
 //import AdFooter from "../components/AdFooter";
 //import RestrictionSiteViewer from "../components/Viewer/RestrictionSiteViewer";
+
 export default {
   name: 'BuildPage',
   components: {
@@ -118,7 +119,7 @@ export default {
      cardDetails_2:
       {
         title: "Description",
-        subtitle: "Should be a line describing the symbology of the genetic circuit",
+        subtitle: "Should be circular plasmid viewer with restriction sites.",
         width: 100,
         height: 400,
         columns: 6,
