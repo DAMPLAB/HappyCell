@@ -1,11 +1,11 @@
 <template>
 
-  <v-card style="z-index: 100;
-  position: fixed;
-  top: 70px"
+  <v-card style= "z-index:100;position:fixed; top:60px;
+  left:2px;"
           elevation="1"
-          height="70%"
+          height="75%"
           outlined
+          max-width="220"
   >
 
 
@@ -21,6 +21,7 @@
       <v-divider></v-divider>
 
       <v-list
+          two-line
           dense
           nav
       >
@@ -30,12 +31,13 @@
             link
             v-on:click="navigatePush($event, item.route)"
         >
-          <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-icon>
+          <v-list-item-icon style= "position:absolute; top:5px">
+            <v-icon>{{ item.icon}}</v-icon>
 
+          </v-list-item-icon>
           <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
+            <v-list-item-title style= "position:absolute; left:50px">
+              {{ item.title }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>

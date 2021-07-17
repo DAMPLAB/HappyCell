@@ -2,32 +2,27 @@
 
   <v-container>
 
-<!--    <div-->
-<!--    v-for="(n,m) in indexs"-->
-<!--         :key="n">-->
-<!--      {{m}}:{{n}}-->
-<!--</div>-->
-
-
-    <div v-if="viewerState.fileDropped" style="text-align: center;" >
+    <div v-if="viewerState.fileDropped"
+         style= "align-items: center;"
+    >
     <PlasmidMap v-bind:displayConfig="{
-								width: 500,
-								height: 500,
+								width: 350,
+								height: 350,
 								viewBox: {
-									width: 400,
-									height: 400,
+									width: 350,
+									height: 350,
 								},
 							}">
       <PlasmidTrack v-bind:layout="plasmidState.plasmidLayout"
                     v-bind:displayConfig="{
-						distance: 110,
+						distance: 125,
 						width: 3,
 						style: 'stroke: gray; fill: gray;',
 					}">
         <Axis v-bind:layout="plasmidState.plasmidLayout"
               v-bind:location="{start: 1, end: 5472}"
               v-bind:displayConfig="{
-							distance: 100,
+							distance: 120,
 							style: 'stroke: transparent; fill: transparent;',
 							scales: [
 								{
@@ -47,7 +42,7 @@
             v-bind:layout="plasmidState.plasmidLayout"
 							v-bind:displayConfig="{
 								width: 10,
-								distance: 110,
+								distance: 125,
 								style: 'stroke: #428bca; fill: #428bca; stroke-width: 1;',
 								anchor: {
 									width: 10,
@@ -69,20 +64,12 @@
             direction="+"
             v-bind:displayConfig="{
 									type: 'text',
-									distance: 140,
+									distance: 155,
 									style: 'text-anchor: middle; font: 9px \'Arial\', sans-serif; fill: black;',
 									hOffset: 0,
 									vOffset: 0,
 								}">
 				</Label>
-
-
-
-
-
-
-<!--creat markers creat a loop, v-for creat markers creat a loop, v-for https://learnvue.co/2020/02/6-techniques-to-write-better-vuejs-v-for-loops/  -->
- -->
 
 
       </PlasmidTrack>
@@ -112,7 +99,9 @@
       </Label>
     </PlasmidMap>
     </div>
-    <v-row
+
+
+    <v-row  style="padding-top:60px;"
         v-else
         align="center"
         justify="center"
@@ -127,7 +116,8 @@
           class="ma-2"
           elevation="5"
       >
-        <vue-dropzone
+        <vue-dropzone style="padding-top: 30%;
+        padding-bottom: 30%;"
             ref="sbol-input"
             id="dropzone"
             :options="dropzoneOptions"
@@ -150,7 +140,6 @@ import PlasmidMarker from "./PlasmidMarker.vue";
 import Axis from "./PlasmidAxis.vue";
 import Label from "./PlasmidLabel.vue";
 import YAPV from "@yapv/core";
-
 
 
 
@@ -186,6 +175,8 @@ export default {
     }
 
   },
+
+
   data: function () {
     return {
       viewerState: {

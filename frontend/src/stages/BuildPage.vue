@@ -15,7 +15,10 @@
             >
               <v-card-title style="justify-content: center">
                 {{cardDetails_1.title}}
+
               </v-card-title>
+
+
 
               <v-card-actions>
                 <RestrictionSiteViewer/>
@@ -31,6 +34,10 @@
             >
               <v-card-title style="justify-content: center">
                 {{cardDetails_2.title}}
+                <br/><br/>
+
+                <PlasmidDescription/>
+
               </v-card-title>
 
               <v-card-actions>
@@ -96,8 +103,11 @@
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import RestrictionSiteViewer from "../components/Viewer/RestrictionSiteViewer";
+import PlasmidDescription from "../components/PlasmidDescription";
+import 'vue2-dropzone/dist/vue2Dropzone.min.css'
+
 //import AdFooter from "../components/AdFooter";
-//import RestrictionSiteViewer from "../components/Viewer/RestrictionSiteViewer";
+
 
 export default {
   name: 'BuildPage',
@@ -105,8 +115,12 @@ export default {
     RestrictionSiteViewer,
     Sidebar,
     Navbar,
+    PlasmidDescription,
     // AdFooter,
   },
+
+
+
   data: () => ({
     cardDetails_1:
       {
@@ -124,6 +138,7 @@ export default {
         height: 400,
         columns: 6,
       },
+
     scoringResults: [
       {
         title: "Dynamic Range",
