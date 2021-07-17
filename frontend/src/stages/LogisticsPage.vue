@@ -4,7 +4,7 @@
     <v-row>
       <Navbar/>
       <v-col>
-        <v-main>
+        <v-main align="center">
           <span>This is the Logistics Page</span>
         </v-main>
       </v-col>

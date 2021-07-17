@@ -8,7 +8,6 @@
           max-width="220"
   >
 
-
     <v-navigation-drawer permanent>
       <v-list-item>
         <v-list-item-content>
@@ -72,6 +71,7 @@ export default {
           route: 'citation'
         },
       ],
+
       right: null,
     }
   },
