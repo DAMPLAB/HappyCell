@@ -1,8 +1,9 @@
 <template>
   <v-footer
+      style= "z-index:120;position:fixed; top:88%;"
       app
-      color="secondary"
-      height="120"
+      color="light-blue lighten-5"
+      height="100%"
   >
     <v-row align-content="stretch" justify="space-between" align="center">
       <v-img
