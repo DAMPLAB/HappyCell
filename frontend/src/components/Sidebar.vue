@@ -8,7 +8,7 @@
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="text-h6" style="text-align: center">
-            HAPPYCELL
+            HappyCell
           </v-list-item-title>
         </v-list-item-content>
       </v-list-item>
