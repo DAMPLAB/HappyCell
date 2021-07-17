@@ -6,20 +6,41 @@
       <v-main>
         <v-row style="padding-left: 15%;">
           <v-col
-              v-for="n in cardDetails"
-              :key="n"
-              :cols="n.columns"
-          >
+          :cols="7">
             <v-card
                 class="pa-2"
                 outlined
                 tile
-                height=250px
+                height=600px
             >
               <v-card-title style="justify-content: center">
-                {{n.title}}
+                {{cardDetails_1.title}}
               </v-card-title>
+
+              <v-card-actions>
+                <RestrictionSiteViewer/>
+              </v-card-actions>
             </v-card>
+          </v-col>
+          <v-col>
+            <v-card
+                class="pa-2"
+                outlined
+                tile
+                height=600px
+            >
+              <v-card-title style="justify-content: center">
+                {{cardDetails_2.title}}
+              </v-card-title>
+
+              <v-card-actions>
+              </v-card-actions>
+            </v-card>
+
+
+
+
+
           </v-col>
         </v-row>
         <v-row style="padding-left: 15%;">
@@ -68,62 +89,40 @@
         </v-row>
       </v-main>
     </v-container>
-    <!--          <v-col cols="2">-->
-    <!--            <Sidebar/>-->
-    <!--          </v-col>-->
-    <!--            <v-col-->
-    <!--                v-for="n in cardDetails"-->
-    <!--                :key="n"-->
-    <!--                cols="8"-->
-    <!--                sm="4"-->
-    <!--            >-->
-    <!--              <v-card-->
-    <!--                  class="pa-2"-->
-    <!--                  outlined-->
-    <!--                  tile-->
-    <!--                  style="justify-content: center"-->
-    <!--              >-->
-    <!--                <v-card-title style="justify-content: center">{{ n.title }}</v-card-title>-->
-    <!--                <v-card-subtitle style="justify-content: center">{{ n.subtitle }}</v-card-subtitle>-->
-    <!--              </v-card>-->
-    <!--            </v-col>-->
-    <!--        </v-main>-->
-    <!--      </v-row>-->
-    <!--      <AdFooter/>-->
-    <!--    </v-container>-->
   </v-app>
 </template>
 
 <script>
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
+import RestrictionSiteViewer from "../components/PlasmidViewer/RestrictionSiteViewer";
 //import AdFooter from "../components/AdFooter";
+//import RestrictionSiteViewer from "../components/Viewer/RestrictionSiteViewer";
 export default {
   name: 'BuildPage',
   components: {
+    RestrictionSiteViewer,
     Sidebar,
-    // Sidebar,
     Navbar,
     // AdFooter,
   },
   data: () => ({
-    cardDetails: [
+    cardDetails_1:
       {
-        title: "Plasmid Viewer Goes Here",
+        title: "Plasmid Viewer",
         subtitle: "Should be circular plasmid viewer with restriction sites.",
         width: 100,
         height: 400,
         columns: 6,
       },
+     cardDetails_2:
       {
-        title: "Textual Description of Passed in File Goes Here.",
-        subtitle: "Should be a line describing the symbology of the " +
-            "genetic circuit.",
-        width: 50,
-        height: 50,
+        title: "Description",
+        subtitle: "Should be a line describing the symbology of the genetic circuit",
+        width: 100,
+        height: 400,
         columns: 6,
-      }
-    ],
+      },
     scoringResults: [
       {
         title: "Dynamic Range",

@@ -5,7 +5,7 @@
     <v-main>
       <Title/>
       <Description/>
-      <Dropzone/>
+
     </v-main>
     <AdFooter/>
   </v-app>
@@ -14,7 +14,7 @@
 <script>
 import Navbar from "../components/Navbar";
 import Title from "../components/Title";
-import Dropzone from "../components/DropZone";
+//import Dropzone from "../components/DropZone";
 import AdFooter from "../components/AdFooter";
 import Description from "../components/Description";
 import Sidebar from "../components/Sidebar";
@@ -23,7 +23,7 @@ export default {
   components: {
     Description,
     Navbar,
-    Dropzone,
+    //Dropzone,
     AdFooter,
     Title,
     Sidebar,

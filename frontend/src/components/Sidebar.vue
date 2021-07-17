@@ -5,13 +5,17 @@
 
   >
     <v-navigation-drawer permanent>
+
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="text-h6" style="text-align: center">
-            IBIS
+            HappyCell
+
           </v-list-item-title>
         </v-list-item-content>
+
       </v-list-item>
+
 
       <v-divider></v-divider>
 
@@ -44,6 +48,11 @@ export default {
   data() {
     return {
       items: [
+        {
+          title: 'Home',
+          icon: 'mdi-home',
+          route: '/'
+        },
         {
           title: 'Design Analysis',
           icon: 'mdi-microscope',
