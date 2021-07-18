@@ -1,14 +1,26 @@
 <template>
   <v-app>
     <Sidebar/>
-    <v-row>
+    <v-container>
       <Navbar/>
-      <v-col>
-        <v-main align="center">
-          <span>This is the Logistics Page</span>
-        </v-main>
-      </v-col>
-    </v-row>
+      <v-main>
+
+        <v-row style="padding-left: 15%; height: 800px">
+          <v-col>
+            <v-card
+                class="pa-2"
+                outlined
+                tile
+                style="border-style: solid; border-width: 3px; outline-color: darkgrey; height: 800px"
+            >
+              <v-card-title style="justify-content: center">
+                This is the Logistics Page
+              </v-card-title>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-main>
+    </v-container>
     <AdFooter/>
   </v-app>
 </template>

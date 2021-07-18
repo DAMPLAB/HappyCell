@@ -8,7 +8,7 @@
           max-width="220"
   >
 
-    <v-navigation-drawer permanent>
+    <v-navigation-drawer permanent color="grey lighten-5">
 
       <v-list-item>
         <v-list-item-content>

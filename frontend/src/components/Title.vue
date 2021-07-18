@@ -8,7 +8,7 @@
       </v-row>
       <v-row justify="center" align="center">
         <div class="text-md-h5">
-          Your genetic design helper.
+          <br/> Your genetic design helper.
         </div>
       </v-row>
     </v-container>

@@ -1,27 +1,28 @@
 <template>
-
   <v-container>
-
     <div v-if="viewerState.fileDropped"
-         style= "align-items: center;"
-    >
-    <PlasmidMap v-bind:displayConfig="{
+         style="align-items: center;">
+      <v-row>
+        <v-col
+            :cols="6">
+          <PlasmidMap
+              v-bind:displayConfig="{
 								width: 350,
-								height: 350,
+								height: 450,
 								viewBox: {
 									width: 350,
 									height: 350,
 								},
 							}">
-      <PlasmidTrack v-bind:layout="plasmidState.plasmidLayout"
-                    v-bind:displayConfig="{
+            <PlasmidTrack v-bind:layout="plasmidState.plasmidLayout"
+                          v-bind:displayConfig="{
 						distance: 125,
 						width: 3,
 						style: 'stroke: gray; fill: gray;',
 					}">
-        <Axis v-bind:layout="plasmidState.plasmidLayout"
-              v-bind:location="{start: 1, end: 5472}"
-              v-bind:displayConfig="{
+              <Axis v-bind:layout="plasmidState.plasmidLayout"
+                    v-bind:location="{start: 1, end: 5472}"
+                    v-bind:displayConfig="{
 							distance: 120,
 							style: 'stroke: transparent; fill: transparent;',
 							scales: [
@@ -33,14 +34,13 @@
 							],
 							width: 0,
 						}"
-        ></Axis>
+              ></Axis>
 
-
-        <PlasmidMarker
-            v-for="(m,n) in maps"
-         :key="n"
-            v-bind:layout="plasmidState.plasmidLayout"
-							v-bind:displayConfig="{
+              <PlasmidMarker
+                  v-for="(m,n) in maps"
+                  :key="n"
+                  direction="+"
+                  v-bind:displayConfig="{
 								width: 10,
 								distance: 125,
 								style: 'stroke: #428bca; fill: #428bca; stroke-width: 1;',
@@ -49,34 +49,35 @@
 									height: 10
 								}
 							}"
-            v-bind:location="{ start: m-10, end: m+10 }"
-            direction="+"
-        >
-			</PlasmidMarker>
+                  v-bind:layout="plasmidState.plasmidLayout"
+                  v-bind:location="{ start: m-10, end: m+10 }"
+              >
+
+              </PlasmidMarker>
 
 
-        <Label
-            v-for="(m,n) in indexs"
-         :key="m"
-            v-bind:layout="plasmidState.plasmidLayout"
-            v-bind:text= "n"
-            v-bind:location="{ start: m-50, end: m+80 }"
-            direction="+"
-            v-bind:displayConfig="{
+              <Label
+                  v-for="(m,n) in indexs"
+                  :key="m"
+                  direction="+"
+                  v-bind:displayConfig="{
 									type: 'text',
 									distance: 155,
 									style: 'text-anchor: middle; font: 9px \'Arial\', sans-serif; fill: black;',
 									hOffset: 0,
 									vOffset: 0,
-								}">
-				</Label>
+								}"
+                  v-bind:layout="plasmidState.plasmidLayout"
+                  v-bind:location="{ start: m-50, end: m+80 }"
+                  v-bind:text="n">
+              </Label>
 
 
-      </PlasmidTrack>
-      <Label v-bind:layout="plasmidState.plasmidLayout"
-             v-bind:text="plasmidState.plasmidName"
-             v-bind:location="{ start: 0, end: 0 }"
-             v-bind:displayConfig="{
+            </PlasmidTrack>
+            <Label v-bind:layout="plasmidState.plasmidLayout"
+                   v-bind:text="plasmidState.plasmidName"
+                   v-bind:location="{ start: 0, end: 0 }"
+                   v-bind:displayConfig="{
 						type: 'text',
 						distance: 0,
 						style: 'text-anchor: middle; font: 16px \'Arial\',' +
@@ -84,11 +85,11 @@
 						hOffset: 0,
 						vOffset: 0,
 						}">
-      </Label>
-      <Label v-bind:layout="plasmidState.plasmidLayout"
-             v-bind:text="plasmidState.plasmidLengthString"
-             v-bind:location="{ start: 0, end: 0 }"
-             v-bind:displayConfig="{
+            </Label>
+            <Label v-bind:layout="plasmidState.plasmidLayout"
+                   v-bind:text="plasmidState.plasmidLengthString"
+                   v-bind:location="{ start: 0, end: 0 }"
+                   v-bind:displayConfig="{
 						type: 'text',
 						distance: 0,
 						style: 'text-anchor: middle; font: 14px \'Arial\', ' +
@@ -96,16 +97,25 @@
 						hOffset: 0,
 						vOffset: 20,
 						}">
-      </Label>
-    </PlasmidMap>
+            </Label>
+          </PlasmidMap>
+        </v-col>
+
+        <v-col cols="1">
+          </v-col>
+
+        <v-col >
+          <PlasmidDescription/>
+        </v-col>
+      </v-row>
     </div>
 
 
-    <v-row  style="padding-top:60px;"
-        v-else
-        align="center"
-        justify="center"
-        class="ma-2"
+    <v-row style="padding-top:60px;"
+           v-else
+           align="center"
+           justify="center"
+           class="ma-2"
     >
       <v-sheet
           id="dropzone_sheet"
@@ -116,12 +126,12 @@
           class="ma-2"
           elevation="5"
       >
-        <vue-dropzone style="padding-top: 30%;
-        padding-bottom: 30%;"
-            ref="sbol-input"
-            id="dropzone"
-            :options="dropzoneOptions"
-            v-on:vdropzone-success="droppedFastaFile">
+        <vue-dropzone style="padding-top: 10%;
+        padding-bottom: 10%;"
+                      ref="sbol-input"
+                      id="dropzone"
+                      :options="dropzoneOptions"
+                      v-on:vdropzone-success="droppedFastaFile">
         </vue-dropzone>
       </v-sheet>
     </v-row>
@@ -138,7 +148,7 @@ import PlasmidMarker from "./PlasmidMarker.vue";
 import Axis from "./PlasmidAxis.vue";
 import Label from "./PlasmidLabel.vue";
 import YAPV from "@yapv/core";
-
+import PlasmidDescription from "../PlasmidDescription";
 
 
 export default {
@@ -150,6 +160,7 @@ export default {
     PlasmidMarker,
     Axis,
     Label,
+    PlasmidDescription,
   },
   methods: {
     droppedFastaFile(input_file, resp) {
@@ -165,10 +176,10 @@ export default {
 
 
       // console testing all res_site and index
-      for(var key in resp['site_index']) {
-        console.log(key);
-        console.log(resp['site_index'][key]);
-      }
+      // for(var key in resp['site_index']) {
+      //   console.log(key);
+      //   console.log(resp['site_index'][key]);
+      // }
       console.log('Hello!' + "File Dropped :)")
     }
 
@@ -186,10 +197,8 @@ export default {
         plasmidLayout: YAPV.layout.circular({length: 0}),
         plasmidLengthString: "0 bp"
       },
-      maps: {
-      },
-       indexs: {
-       },
+      maps: {},
+      indexs: {},
 
       dropzoneOptions: {
         url: 'http://localhost:8000/display_plasmid/',

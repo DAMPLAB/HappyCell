@@ -1,15 +1,16 @@
 
 <template>
-  <div id="app">
-    <div className="content">
+  <div id="app" >
+    <div className="content" >
       <transition name="fade">
         <router-view/>
       </transition>
+     </div>
     </div>
-  </div>
 </template>
 
 <style>
+
 </style>
 <script>
 export default {

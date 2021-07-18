@@ -1,4 +1,4 @@
-<template>
+<template >
   <v-app>
     <Navbar/>
     <Sidebar/>
@@ -7,7 +7,7 @@
         <Title/>
         <v-row style="padding-left: 15%; height: 800px">
           <v-col>
-            <v-card
+            <v-card color="grey lighten-5"
                 class="pa-2"
                 outlined
                 tile
@@ -25,6 +25,10 @@
      <AdFooter/>
   </v-app>
 </template>
+<style>
+
+</style>
+
 
 <script>
 import Navbar from "../components/Navbar";
