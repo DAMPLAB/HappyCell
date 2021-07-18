@@ -8,7 +8,6 @@
           max-width="220"
   >
 
-  >
     <v-navigation-drawer permanent>
 
       <v-list-item>
