@@ -80,6 +80,7 @@ export default {
           route: 'citation'
         },
       ],
+
       right: null,
     }
   },
