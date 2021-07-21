@@ -5,6 +5,12 @@
       dark
       height="50"
   >
+
+    <div>
+      <img src="../assets/github.png" width="20px">
+    </div>
+
+
   </v-app-bar>
 </template>
 
