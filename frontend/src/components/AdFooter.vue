@@ -1,6 +1,6 @@
 <template>
   <v-footer
-      style= "z-index:120;position:fixed; top:88%;"
+      style= "z-index:120;position:fixed; top:90%;"
       app
       color="light-blue lighten-5"
       height="100%"

@@ -5,6 +5,12 @@
       dark
       height="50"
   >
+  <div style="padding-left: 90%;">
+      <v-btn icon>
+        <v-icon>mdi-github</v-icon>
+      </v-btn>
+  </div>
+
   </v-app-bar>
 </template>
 
