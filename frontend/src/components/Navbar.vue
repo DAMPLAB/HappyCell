@@ -6,8 +6,11 @@
       height="50"
   >
   <div style="padding-left: 90%;">
-      <v-btn icon>
-        <v-icon>mdi-github</v-icon>
+      <v-btn
+          img
+          color="light-blue lighten-5"
+      >
+        <img src="../assets/img.png" width="20px">
       </v-btn>
   </div>
 
