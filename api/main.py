@@ -102,6 +102,8 @@ async def create_plasmid_struct(file: bytes = File(...)):
     #  name of the plasmid not correct ???
     #  lost infomation of exactly cutting index. need to confirm
 
+
+
     return {
         "sequence_name": name,
         "sequence_length": sequence_length,

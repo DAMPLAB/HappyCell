@@ -53,7 +53,7 @@ def format_fasta_file(sequence_file):
     removal_list = [", ", "'", "[", "]"]
     for entry in removal_list:
         genomic_code = genomic_code.replace(entry, '')
-    return sequence_name, input_text
+    return sequence_name, genomic_code
 
 
 def find_site(sequence: str) -> Dict[str, int]:
